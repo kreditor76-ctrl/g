@@ -1,0 +1,1251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+  <title>Daawat Restaurant | दावत रेस्टोरेंट | Best Multi-Cuisine in Ulwe, Navi Mumbai</title>
+  <meta name="description" content="Daawat Restaurant — Best multi-cuisine restaurant in Ulwe, Navi Mumbai. Authentic North Indian food, Biryani, Tandoori, home delivery, and dine-in. Book a table today!" />
+  <meta property="og:title" content="Daawat Restaurant | दावत रेस्टोरेंट" />
+  <meta property="og:description" content="Authentic multi-cuisine dining in Ulwe, Navi Mumbai. Biryani, Tandoori, North Indian curries, and more. Book your table today!" />
+  <meta property="og:type" content="restaurant" />
+  <link rel="preconnect" href="https://fonts.googleapis.com/" />
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Lato', sans-serif; background: #fff; color: #111827; overflow-x: hidden; }
+
+    /* Tailwind-style resets & utilities */
+    .playfair { font-family: 'Playfair Display', serif; }
+
+    /* Section divider (amber line) */
+    .section-divider {
+      width: 64px; height: 3px;
+      background: #d97706;
+      margin: 1rem auto 0;
+      border-radius: 9999px;
+    }
+
+    /* ── NAV ── */
+    header {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+      transition: all 0.3s;
+      background: rgba(0,0,0,0.4);
+      backdrop-filter: blur(4px);
+    }
+    header.scrolled {
+      background: rgba(255,255,255,0.97);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+    }
+    .nav-inner {
+      max-width: 1280px; margin: 0 auto;
+      padding: 0 1rem;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 64px;
+    }
+    @media(min-width:768px){ .nav-inner { height: 80px; padding: 0 1.5rem; } }
+    .nav-logo-wrap { display: flex; flex-direction: column; line-height: 1; }
+    .nav-logo-main {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem; font-weight: 700; letter-spacing: 0.05em;
+      color: #fff; transition: color 0.3s;
+    }
+    header.scrolled .nav-logo-main { color: #111827; }
+    @media(min-width:768px){ .nav-logo-main { font-size: 1.5rem; } }
+    .nav-logo-sub {
+      font-size: 0.65rem; letter-spacing: 0.25em; text-transform: uppercase;
+      color: #fcd34d; transition: color 0.3s;
+    }
+    header.scrolled .nav-logo-sub { color: #d97706; }
+    .nav-links {
+      display: none; align-items: center; gap: 1.5rem; list-style: none;
+    }
+    @media(min-width:768px){ .nav-links { display: flex; } }
+    .nav-link {
+      font-size: 0.875rem; font-weight: 500;
+      color: #fff; text-decoration: none; transition: color 0.2s;
+    }
+    header.scrolled .nav-link { color: #374151; }
+    .nav-link:hover { color: #fcd34d; }
+    header.scrolled .nav-link:hover { color: #d97706; }
+    .nav-book {
+      background: #d97706; color: #fff !important;
+      padding: 0.5rem 1rem; border-radius: 9999px;
+      font-size: 0.875rem; font-weight: 600;
+      text-decoration: none; transition: all 0.2s;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+    .nav-book:hover { background: #b45309; transform: scale(1.02); }
+    .nav-mobile { display: flex; align-items: center; gap: 0.5rem; }
+    @media(min-width:768px){ .nav-mobile { display: none; } }
+    .nav-phone-btn {
+      padding: 0.5rem; border-radius: 9999px; background: transparent;
+      border: none; cursor: pointer; color: #fff; transition: color 0.3s;
+    }
+    header.scrolled .nav-phone-btn { color: #374151; }
+    .hamburger-btn {
+      padding: 0.5rem; background: transparent; border: none;
+      cursor: pointer; color: #fff; transition: color 0.3s;
+    }
+    header.scrolled .hamburger-btn { color: #374151; }
+    /* Mobile menu */
+    .mobile-menu {
+      display: none; flex-direction: column; gap: 0; 
+      background: #fff; border-top: 1px solid #f3f4f6;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      padding: 0.875rem 1.5rem;
+      font-size: 0.875rem; font-weight: 500;
+      color: #374151; text-decoration: none;
+      border-bottom: 1px solid #f9fafb;
+      transition: background 0.15s;
+    }
+    .mobile-menu a:hover { background: #fffbeb; color: #d97706; }
+
+    /* ── HERO ── */
+    #home {
+      position: relative; min-height: 100vh;
+      display: flex; align-items: center; justify-content: center;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background-image: url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1600&q=80');
+      background-size: cover; background-position: center;
+    }
+    .hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.75) 100%);
+    }
+    .hero-content {
+      position: relative; z-index: 10;
+      text-align: center; padding: 1rem;
+      max-width: 56rem; margin: 0 auto;
+      animation: fadeInUp 0.8s ease both;
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .hero-welcome {
+      font-size: 0.875rem; font-weight: 600;
+      letter-spacing: 0.4em; text-transform: uppercase;
+      color: #fbbf24; margin-bottom: 1rem; display: block;
+    }
+    .hero-h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.5rem, 8vw, 4.5rem);
+      font-weight: 700; color: #fff; line-height: 1.1; margin-bottom: 0.5rem;
+    }
+    .hero-sub-name {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.1rem, 3vw, 1.5rem);
+      font-style: italic; color: #fcd34d; margin-bottom: 1.5rem;
+    }
+    .hero-divider { width: 64px; height: 2px; background: #fbbf24; margin: 0 auto 1.5rem; }
+    .hero-tagline {
+      font-size: clamp(1rem, 2.5vw, 1.25rem);
+      color: rgba(255,255,255,0.9); line-height: 1.6; margin-bottom: 1rem; font-weight: 600;
+    }
+    .hero-desc {
+      font-size: clamp(0.875rem, 2vw, 1.125rem);
+      color: rgba(255,255,255,0.7); line-height: 1.7;
+      max-width: 32rem; margin: 0 auto 2.5rem;
+    }
+    .hero-btns { display: flex; flex-direction: column; gap: 1rem; justify-content: center; align-items: center; }
+    @media(min-width:480px){ .hero-btns { flex-direction: row; } }
+    .btn-amber {
+      display: inline-block; background: #d97706; color: #fff;
+      font-weight: 700; padding: 1rem 2.5rem; border-radius: 9999px;
+      font-size: 1.125rem; text-decoration: none;
+      transition: all 0.2s; box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+    }
+    .btn-amber:hover { background: #b45309; transform: scale(1.05); }
+    .btn-outline-white {
+      display: inline-block; border: 2px solid #fff; color: #fff;
+      font-weight: 700; padding: 1rem 2.5rem; border-radius: 9999px;
+      font-size: 1.125rem; text-decoration: none;
+      transition: all 0.2s;
+    }
+    .btn-outline-white:hover { background: #fff; color: #92400e; }
+    .hero-quote {
+      margin-top: 2rem; color: rgba(251,191,36,0.8); font-size: 0.875rem; letter-spacing: 0.05em;
+    }
+    .hero-scroll {
+      position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
+      z-index: 10; display: flex; flex-direction: column; align-items: center; gap: 0.25rem;
+      color: rgba(255,255,255,0.6); text-decoration: none; transition: color 0.2s;
+    }
+    .hero-scroll:hover { color: #fff; }
+    .hero-scroll span { font-size: 0.65rem; letter-spacing: 0.25em; }
+    .hero-scroll-line { width: 2px; height: 2rem; background: rgba(255,255,255,0.4); animation: pulse 2s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+
+    /* ── ABOUT ── */
+    #about { padding: 5rem 1rem; background: #fff; }
+    .about-inner { max-width: 1280px; margin: 0 auto; padding: 0 1rem; }
+    .section-header { text-align: center; margin-bottom: 3rem; }
+    .section-label-text {
+      font-size: 0.75rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase;
+      color: #d97706; margin-bottom: 0.5rem;
+    }
+    .section-h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 5vw, 3rem); font-weight: 700; color: #111827;
+    }
+    .about-grid { display: grid; gap: 3rem; align-items: center; }
+    @media(min-width:768px){ .about-grid { grid-template-columns: 1fr 1fr; } }
+    .about-img-wrap { position: relative; }
+    .about-img {
+      border-radius: 1rem; box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+      width: 100%; object-fit: cover; height: 320px; display: block;
+    }
+    @media(min-width:768px){ .about-img { height: 440px; } }
+    .about-badge-months {
+      position: absolute; bottom: -1.5rem; right: -1.5rem;
+      background: #d97706; color: #fff; border-radius: 1rem;
+      padding: 1.5rem; box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+      display: none;
+    }
+    @media(min-width:768px){ .about-badge-months { display: block; } }
+    .about-badge-months .badge-num { font-family: 'Playfair Display', serif; font-size: 2.25rem; font-weight: 700; }
+    .about-badge-months p { font-size: 0.75rem; opacity: 0.9; margin-top: 0.25rem; }
+    .about-stars-badge {
+      position: absolute; top: -1rem; left: -1rem;
+      background: #fff; border-radius: 0.75rem; padding: 1rem;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.12); display: none;
+    }
+    @media(min-width:768px){ .about-stars-badge { display: block; } }
+    .about-stars-badge .stars { display: flex; gap: 2px; }
+    .about-stars-badge .star { color: #fbbf24; font-size: 1.125rem; }
+    .about-stars-badge p { font-size: 0.7rem; color: #6b7280; margin-top: 0.25rem; }
+    .about-text {}
+    .owner-row { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
+    .owner-avatar {
+      width: 4rem; height: 4rem; border-radius: 9999px;
+      object-fit: cover; border: 2px solid #fbbf24;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      background: #fef3c7; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem;
+    }
+    .owner-name { font-weight: 700; color: #111827; }
+    .owner-title { color: #d97706; font-size: 0.875rem; }
+    .about-blockquote {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.125rem; font-style: italic;
+      color: #374151; line-height: 1.7;
+      border-left: 4px solid #fbbf24;
+      padding-left: 1.5rem; margin-bottom: 1.5rem;
+    }
+    .about-p { color: #6b7280; line-height: 1.75; margin-bottom: 1rem; font-size: 0.95rem; }
+    .about-icons { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 2rem; }
+    .about-icon-card {
+      background: #fffbeb; border-radius: 0.75rem; padding: 1rem;
+      text-align: center; border: 1px solid #fef3c7;
+    }
+    .about-icon-card .icon { font-size: 1.5rem; margin-bottom: 0.25rem; }
+    .about-icon-card p { font-size: 0.8rem; font-weight: 600; color: #374151; }
+
+    /* ── MENU ── */
+    #menu { padding: 5rem 1rem; background: #fffbeb; }
+    .menu-inner { max-width: 1280px; margin: 0 auto; padding: 0 1rem; }
+    .menu-tabs { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem; margin-bottom: 2.5rem; }
+    .menu-tab {
+      padding: 0.5rem 1rem; border-radius: 9999px;
+      font-size: 0.875rem; font-weight: 600;
+      border: 1px solid; cursor: pointer; transition: all 0.2s;
+      background: #fff; color: #6b7280; border-color: #e5e7eb;
+    }
+    .menu-tab:hover { border-color: #fbbf24; color: #b45309; }
+    .menu-tab.active { background: #d97706; color: #fff; border-color: #d97706; box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
+    .menu-categories { display: flex; flex-direction: column; gap: 2rem; }
+    .menu-category { display: none; }
+    .menu-category.active { display: flex; flex-direction: column; gap: 2rem; }
+    .menu-card {
+      background: #fff; border-radius: 1rem; border: 1px solid #f3f4f6;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.06); overflow: hidden;
+    }
+    .menu-card-header {
+      display: flex; align-items: center; gap: 0.75rem;
+      padding: 1rem 1.5rem; border-bottom: 1px solid #f3f4f6;
+      background: #f9fafb;
+    }
+    .menu-card-header h3 { font-family: 'Playfair Display', serif; font-size: 1.25rem; font-weight: 700; color: #111827; }
+    .badge-veg {
+      font-size: 0.7rem; font-weight: 700; padding: 0.2rem 0.5rem;
+      border-radius: 9999px; border: 1px solid;
+      background: #f0fdf4; color: #15803d; border-color: #bbf7d0;
+    }
+    .badge-nonveg {
+      font-size: 0.7rem; font-weight: 700; padding: 0.2rem 0.5rem;
+      border-radius: 9999px; border: 1px solid;
+      background: #fef2f2; color: #b91c1c; border-color: #fecaca;
+    }
+    .menu-items { }
+    .menu-item {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0.75rem 1.5rem; border-top: 1px solid #f9fafb;
+      transition: background 0.15s;
+    }
+    .menu-item:hover { background: #fffbeb; }
+    .menu-item-name { font-size: 0.875rem; font-weight: 500; color: #1f2937; }
+    .menu-item-price { font-size: 0.875rem; font-weight: 700; color: #b45309; white-space: nowrap; margin-left: 1rem; }
+    .menu-note { text-align: center; color: #9ca3af; font-size: 0.875rem; margin-top: 2rem; }
+
+    /* ── GALLERY ── */
+    #gallery { padding: 5rem 1rem; background: #fff; }
+    .gallery-inner { max-width: 1280px; margin: 0 auto; padding: 0 1rem; }
+    .gallery-grid {
+      display: grid; gap: 1rem;
+      grid-template-columns: 1fr;
+    }
+    @media(min-width:768px){
+      .gallery-grid {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto auto;
+      }
+    }
+    .gallery-item {
+      position: relative; overflow: hidden; border-radius: 1rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1); cursor: pointer;
+      min-height: 200px;
+    }
+    .gallery-item.large {
+      min-height: 400px;
+    }
+    @media(min-width:768px){
+      .gallery-item.large { grid-column: span 2; grid-row: span 2; }
+    }
+    .gallery-item img {
+      width: 100%; height: 100%; min-height: inherit;
+      object-fit: cover; display: block;
+      transition: transform 0.5s ease;
+    }
+    .gallery-item:hover img { transform: scale(1.05); }
+    .gallery-item-overlay {
+      position: absolute; inset: 0;
+      background: rgba(0,0,0,0); transition: background 0.4s;
+      display: flex; align-items: flex-end;
+    }
+    .gallery-item:hover .gallery-item-overlay { background: rgba(0,0,0,0.5); }
+    .gallery-item-label {
+      width: 100%; color: #fff; font-size: 0.875rem; font-weight: 500;
+      padding: 0.75rem 1rem;
+      background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+      transform: translateY(100%); transition: transform 0.3s;
+    }
+    .gallery-item:hover .gallery-item-label { transform: translateY(0); }
+    .gallery-stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-top: 2.5rem; }
+    @media(min-width:768px){ .gallery-stats { grid-template-columns: repeat(4, 1fr); } }
+    .gallery-stat {
+      background: #fffbeb; border-radius: 1rem; padding: 1.25rem;
+      text-align: center; border: 1px solid #fef3c7;
+    }
+    .gallery-stat-num { font-family: 'Playfair Display', serif; font-size: 1.875rem; font-weight: 700; color: #b45309; }
+    .gallery-stat-label { font-size: 0.875rem; color: #6b7280; margin-top: 0.25rem; }
+
+    /* ── REVIEWS ── */
+    #reviews { padding: 5rem 1rem; background: linear-gradient(to bottom, #fffbeb, #fff); }
+    .reviews-inner { max-width: 1280px; margin: 0 auto; padding: 0 1rem; }
+    .reviews-score-row { display: flex; align-items: center; justify-content: center; gap: 1rem; margin-top: 1rem; }
+    .reviews-stars-big { display: flex; gap: 2px; }
+    .reviews-stars-big span { color: #fbbf24; font-size: 1.5rem; }
+    .reviews-score-num { font-family: 'Playfair Display', serif; font-size: 1.875rem; font-weight: 700; color: #111827; }
+    .reviews-score-label { font-size: 0.875rem; color: #6b7280; }
+    .reviews-grid { display: grid; gap: 1.5rem; grid-template-columns: 1fr; margin-top: 3rem; }
+    @media(min-width:640px){ .reviews-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media(min-width:1024px){ .reviews-grid { grid-template-columns: repeat(3, 1fr); } }
+    .review-card {
+      background: #fff; border-radius: 1rem; border: 1px solid #f3f4f6;
+      padding: 1.5rem; display: flex; flex-direction: column; gap: 0.75rem;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .review-card:hover { box-shadow: 0 8px 24px rgba(0,0,0,0.1); transform: translateY(-2px); }
+    .review-header { display: flex; align-items: flex-start; justify-content: space-between; }
+    .reviewer-row { display: flex; align-items: center; gap: 0.75rem; }
+    .reviewer-avatar {
+      width: 2.5rem; height: 2.5rem; border-radius: 9999px;
+      background: #fef3c7; display: flex; align-items: center; justify-content: center;
+      color: #b45309; font-weight: 700; font-size: 1rem; flex-shrink: 0;
+    }
+    .reviewer-name { font-weight: 600; color: #111827; font-size: 0.875rem; }
+    .reviewer-type { color: #9ca3af; font-size: 0.75rem; }
+    .review-time { color: #9ca3af; font-size: 0.75rem; white-space: nowrap; }
+    .review-stars-small { display: flex; gap: 1px; }
+    .review-stars-small span { color: #fbbf24; }
+    .review-text { color: #4b5563; font-size: 0.875rem; line-height: 1.7; }
+    .review-dish-tag {
+      font-size: 0.7rem; background: #fffbeb; color: #b45309;
+      padding: 0.2rem 0.5rem; border-radius: 9999px; font-weight: 500;
+      border: 1px solid #fef3c7; display: inline-block;
+      margin-top: auto; padding-top: 0.5rem; border-top: 1px solid #f3f4f6;
+      width: 100%;
+    }
+    .review-dish-tag span { display: inline-block; }
+    .reviews-cta-row { text-align: center; margin-top: 2.5rem; }
+    .btn-outline-amber {
+      border: 2px solid #d97706; color: #b45309;
+      padding: 0.75rem 2rem; border-radius: 9999px;
+      font-weight: 600; font-size: 0.875rem;
+      background: transparent; cursor: pointer; transition: all 0.2s;
+      text-decoration: none; display: inline-block;
+    }
+    .btn-outline-amber:hover { background: #d97706; color: #fff; }
+    .review-google-banner {
+      margin-top: 3rem; background: #d97706; border-radius: 1rem;
+      padding: 2rem; text-align: center; color: #fff;
+    }
+    .review-google-banner h3 { font-family: 'Playfair Display', serif; font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .review-google-banner p { color: rgba(255,255,255,0.8); margin-bottom: 1rem; }
+    .btn-white-sm {
+      display: inline-block; background: #fff; color: #b45309;
+      font-weight: 700; padding: 0.5rem 1.5rem; border-radius: 9999px;
+      font-size: 0.875rem; text-decoration: none; transition: background 0.2s;
+    }
+    .btn-white-sm:hover { background: #fef3c7; }
+
+    /* ── BOOKING ── */
+    #booking { padding: 5rem 1rem; background: #fff; }
+    .booking-inner { max-width: 1280px; margin: 0 auto; padding: 0 1rem; }
+    .booking-grid { display: grid; gap: 3rem; margin-top: 3rem; }
+    @media(min-width:1024px){ .booking-grid { grid-template-columns: 1fr 1fr; } }
+    .booking-form {
+      background: #fffbeb; border-radius: 1rem; border: 1px solid #fef3c7;
+      padding: 2rem; box-shadow: 0 1px 6px rgba(0,0,0,0.06);
+    }
+    .form-grid { display: grid; gap: 1.25rem; grid-template-columns: 1fr; }
+    @media(min-width:640px){ .form-grid { grid-template-columns: repeat(2, 1fr); } }
+    .form-group { display: flex; flex-direction: column; gap: 0.25rem; }
+    .form-label { font-size: 0.875rem; font-weight: 600; color: #374151; }
+    .form-input, .form-select {
+      border-radius: 0.75rem; border: 1px solid #fde68a;
+      background: #fff; padding: 0.75rem 1rem;
+      font-size: 0.875rem; color: #1f2937;
+      outline: none; transition: box-shadow 0.2s, border-color 0.2s;
+      width: 100%; font-family: inherit;
+    }
+    .form-input:focus, .form-select:focus { outline: none; box-shadow: 0 0 0 3px rgba(251,191,36,0.3); border-color: #fbbf24; }
+    .form-input::placeholder { color: #9ca3af; }
+    .booking-btns { display: flex; flex-direction: column; gap: 0.75rem; margin-top: 1.5rem; }
+    @media(min-width:640px){ .booking-btns { flex-direction: row; } }
+    .btn-book-main {
+      flex: 1; background: #d97706; color: #fff; font-weight: 700;
+      padding: 0.75rem 1.5rem; border-radius: 0.75rem; border: none;
+      cursor: pointer; transition: background 0.2s; font-size: 0.95rem;
+      font-family: inherit; box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .btn-book-main:hover { background: #b45309; }
+    .btn-book-whatsapp {
+      flex: 1; display: flex; align-items: center; justify-content: center; gap: 0.5rem;
+      background: #16a34a; color: #fff; font-weight: 700;
+      padding: 0.75rem 1.5rem; border-radius: 0.75rem;
+      text-decoration: none; transition: background 0.2s; font-size: 0.95rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .btn-book-whatsapp:hover { background: #15803d; }
+    .booking-info { display: flex; flex-direction: column; gap: 1.5rem; }
+    .info-cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+    .info-card {
+      background: #fffbeb; border: 1px solid #fef3c7;
+      border-radius: 1rem; padding: 1.25rem;
+    }
+    .info-card-header { display: flex; align-items: center; gap: 0.5rem; color: #d97706; margin-bottom: 0.5rem; }
+    .info-card-header span { font-weight: 600; font-size: 0.875rem; }
+    .info-card a { display: block; font-weight: 600; color: #111827; text-decoration: none; transition: color 0.2s; font-size: 0.95rem; }
+    .info-card a:hover { color: #d97706; }
+    .info-card p { font-size: 0.875rem; color: #374151; line-height: 1.6; }
+    .hours-list { display: flex; flex-direction: column; gap: 0.25rem; }
+    .hours-row { display: flex; justify-content: space-between; font-size: 0.8rem; color: #374151; padding: 0.25rem 0; border-bottom: 1px solid #fef3c7; }
+    .hours-row:last-child { border: none; }
+    .hours-row span:last-child { font-weight: 600; color: #d97706; }
+    .order-card {
+      background: #fffbeb; border: 1px solid #fef3c7;
+      border-radius: 1rem; padding: 1.25rem;
+    }
+    .order-card-title { display: flex; align-items: center; gap: 0.5rem; color: #d97706; font-weight: 600; margin-bottom: 0.75rem; font-size: 0.875rem; }
+    .order-btns { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+    .btn-order {
+      padding: 0.4rem 1rem; border-radius: 9999px; font-size: 0.8rem; font-weight: 600;
+      text-decoration: none; transition: all 0.2s; border: 1px solid;
+    }
+    .btn-swiggy { color: #ea580c; border-color: #ea580c; background: transparent; }
+    .btn-swiggy:hover { background: #ea580c; color: #fff; }
+    .btn-zomato { color: #e11d48; border-color: #e11d48; background: transparent; }
+    .btn-zomato:hover { background: #e11d48; color: #fff; }
+    .btn-wa-sm { color: #16a34a; border-color: #16a34a; background: transparent; }
+    .btn-wa-sm:hover { background: #16a34a; color: #fff; }
+    .address-card {
+      background: #fffbeb; border: 1px solid #fef3c7;
+      border-radius: 1rem; padding: 1.25rem;
+    }
+    .address-card-title { display: flex; align-items: center; gap: 0.5rem; color: #d97706; font-weight: 600; margin-bottom: 0.5rem; font-size: 0.875rem; }
+    .address-card p { font-size: 0.875rem; color: #374151; line-height: 1.7; }
+
+    /* ── FOOTER ── */
+    footer { background: #111827; color: rgba(255,255,255,0.7); padding: 3rem 1rem; }
+    .footer-inner { max-width: 1280px; margin: 0 auto; padding: 0 1rem; }
+    .footer-grid { display: grid; gap: 2rem; grid-template-columns: 1fr; }
+    @media(min-width:768px){ .footer-grid { grid-template-columns: 2fr 1fr 1fr 1fr; } }
+    .footer-brand {}
+    .footer-logo { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; color: #fff; }
+    .footer-logo-sub { font-size: 0.7rem; letter-spacing: 0.25em; color: #fcd34d; text-transform: uppercase; }
+    .footer-tagline { font-style: italic; color: #fbbf24; margin: 0.75rem 0 0.5rem; font-size: 0.875rem; line-height: 1.6; }
+    .footer-desc { font-size: 0.8rem; color: rgba(255,255,255,0.5); line-height: 1.7; }
+    .footer-col h4 { color: #fff; font-weight: 700; font-size: 0.875rem; margin-bottom: 1rem; letter-spacing: 0.05em; }
+    .footer-links { display: flex; flex-direction: column; gap: 0.5rem; }
+    .footer-links a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.8rem; transition: color 0.2s; }
+    .footer-links a:hover { color: #fbbf24; }
+    .footer-hours { display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.8rem; }
+    .footer-hours-row { display: flex; flex-direction: column; margin-bottom: 0.25rem; }
+    .footer-hours-day { color: rgba(255,255,255,0.5); }
+    .footer-hours-time { color: #fbbf24; font-weight: 600; }
+    .footer-contact { display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.8rem; }
+    .footer-contact a { color: rgba(255,255,255,0.6); text-decoration: none; transition: color 0.2s; }
+    .footer-contact a:hover { color: #fbbf24; }
+    .footer-contact-order { display: flex; flex-direction: column; gap: 0.35rem; margin-top: 0.5rem; }
+    .footer-divider { border: none; border-top: 1px solid rgba(255,255,255,0.1); margin: 2rem 0; }
+    .footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; font-size: 0.75rem; color: rgba(255,255,255,0.3); }
+    .footer-book-btn {
+      background: #d97706; color: #fff; text-decoration: none;
+      padding: 0.5rem 1.5rem; border-radius: 9999px;
+      font-weight: 600; font-size: 0.8rem; transition: background 0.2s;
+    }
+    .footer-book-btn:hover { background: #b45309; }
+
+    /* ── TOAST ── */
+    .toast {
+      position: fixed; bottom: 2rem; left: 50%; transform: translateX(-50%) translateY(5rem);
+      background: #111827; color: #fbbf24;
+      padding: 0.75rem 1.5rem; border-radius: 0.75rem;
+      font-size: 0.875rem; font-weight: 600;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+      z-index: 9999; transition: transform 0.3s cubic-bezier(.34,1.56,.64,1);
+      pointer-events: none;
+    }
+    .toast.show { transform: translateX(-50%) translateY(0); }
+  </style>
+</head>
+<body>
+
+<!-- ═══ HEADER / NAV ═══ -->
+<header id="header">
+  <div class="nav-inner">
+    <div class="nav-logo-wrap">
+      <span class="nav-logo-main">दावत Restaurant</span>
+      <span class="nav-logo-sub">Multi Cuisine</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#home" class="nav-link">Home</a></li>
+      <li><a href="#about" class="nav-link">About</a></li>
+      <li><a href="#menu" class="nav-link">Menu</a></li>
+      <li><a href="#gallery" class="nav-link">Gallery</a></li>
+      <li><a href="#reviews" class="nav-link">Reviews</a></li>
+      <li><a href="#booking" class="nav-book">Book a Table</a></li>
+    </ul>
+    <div class="nav-mobile">
+      <a href="tel:7208109801" class="nav-phone-btn" aria-label="Call us">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg>
+      </a>
+      <button class="hamburger-btn" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+        <svg id="icon-menu" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/></svg>
+        <svg id="icon-x" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#home" onclick="closeMenu()">Home</a>
+    <a href="#about" onclick="closeMenu()">About</a>
+    <a href="#menu" onclick="closeMenu()">Menu</a>
+    <a href="#gallery" onclick="closeMenu()">Gallery</a>
+    <a href="#reviews" onclick="closeMenu()">Reviews</a>
+    <a href="#booking" onclick="closeMenu()" style="color:#d97706;font-weight:700;">Book a Table</a>
+  </div>
+</header>
+
+<!-- ═══ HERO ═══ -->
+<section id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <span class="hero-welcome">Welcome to</span>
+    <h1 class="hero-h1">दावत Restaurant</h1>
+    <p class="hero-sub-name">Daawat Restaurant</p>
+    <div class="hero-divider"></div>
+    <p class="hero-tagline">Where Every Meal Is a Celebration of Flavour</p>
+    <p class="hero-desc">Authentic multi-cuisine dining — from sizzling tandoori to rich North Indian curries — served with warmth in the heart of Ulwe.</p>
+    <div class="hero-btns">
+      <a href="#booking" class="btn-amber">Book a Table</a>
+      <a href="#menu" class="btn-outline-white">Explore Menu</a>
+    </div>
+    <p class="hero-quote">"People Who Love To Eat Are Always The Best People!"</p>
+  </div>
+  <a href="#about" class="hero-scroll">
+    <span>SCROLL</span>
+    <div class="hero-scroll-line"></div>
+  </a>
+</section>
+
+<!-- ═══ ABOUT ═══ -->
+<section id="about">
+  <div class="about-inner">
+    <div class="section-header">
+      <p class="section-label-text">Our Story</p>
+      <h2 class="section-h2">About Daawat</h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="about-grid">
+      <div class="about-img-wrap">
+        <img class="about-img" src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&q=80" alt="Daawat Restaurant interior" />
+        <div class="about-badge-months">
+          <div class="badge-num">9+</div>
+          <p>Months of</p>
+          <p>Pure Joy</p>
+        </div>
+        <div class="about-stars-badge">
+          <div class="stars">
+            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+          </div>
+          <p>100+ Happy Reviews</p>
+        </div>
+      </div>
+      <div class="about-text">
+        <div class="owner-row">
+          <div class="owner-avatar">👨‍🍳</div>
+          <div>
+            <p class="owner-name">A Message from the Owner</p>
+            <p class="owner-title">Founder &amp; Host, Daawat Restaurant</p>
+          </div>
+        </div>
+        <blockquote class="about-blockquote">"At Daawat, food is more than sustenance — it is an invitation. An invitation to sit together, to share stories, and to savour the rich tapestry of flavours that our incredible cuisine has to offer."</blockquote>
+        <p class="about-p">When I opened Daawat Restaurant in the heart of Ulwe, my dream was simple: to bring the true taste of authentic multi-cuisine cooking to our wonderful community — cooked with fresh ingredients, served with love, and enjoyed in an atmosphere that feels like home.</p>
+        <p class="about-p">From our signature <strong>Biryani</strong> and <strong>Tandoori Chicken</strong> to hearty <strong>Dal Makhani</strong>, every dish is prepared with recipes perfected over years of passion. Whether you dine in with family, order for a celebration, or grab a quick delivery — I personally ensure that every plate leaves our kitchen with the same care and quality.</p>
+        <p class="about-p">Our team is trained not just to serve food, but to create memories. I am grateful to every guest who has made Daawat their favourite restaurant in Ulwe. Come, experience the <em>daawat</em> — the feast — that awaits you!</p>
+        <div class="about-icons">
+          <div class="about-icon-card"><div class="icon">🍽️</div><p>Dine In</p></div>
+          <div class="about-icon-card"><div class="icon">🛵</div><p>Home Delivery</p></div>
+          <div class="about-icon-card"><div class="icon">🥡</div><p>Takeaway</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ MENU ═══ -->
+<section id="menu">
+  <div class="menu-inner">
+    <div class="section-header">
+      <p class="section-label-text">Explore Our Dishes</p>
+      <h2 class="section-h2">Our Menu</h2>
+      <div class="section-divider"></div>
+      <p style="color:#6b7280;max-width:32rem;margin:0.75rem auto 0;font-size:0.95rem;">From North India's smoky tandoors to Oriental flavours — every dish crafted fresh, every day.</p>
+    </div>
+
+    <div class="menu-tabs">
+      <button class="menu-tab active" onclick="switchMenu(this,'cat-special')">⭐ Daawat Special</button>
+      <button class="menu-tab" onclick="switchMenu(this,'cat-vegstarter')">🥗 Veg Starter</button>
+      <button class="menu-tab" onclick="switchMenu(this,'cat-nonvegstarter')">🍗 Non Veg Starter</button>
+      <button class="menu-tab" onclick="switchMenu(this,'cat-vegmain')">🍛 Veg Main Course</button>
+      <button class="menu-tab" onclick="switchMenu(this,'cat-nonvegmain')">🍖 Non Veg Main Course</button>
+      <button class="menu-tab" onclick="switchMenu(this,'cat-daalrice')">🍚 Daal &amp; Rice</button>
+      <button class="menu-tab" onclick="switchMenu(this,'cat-biryani')">🫕 Biryani</button>
+      <button class="menu-tab" onclick="switchMenu(this,'cat-breads')">🫓 Indian Breads</button>
+      <button class="menu-tab" onclick="switchMenu(this,'cat-oriental')">🥢 Oriental &amp; Continental</button>
+      <button class="menu-tab" onclick="switchMenu(this,'cat-ricenoodles')">🍜 Rice &amp; Noodles</button>
+      <button class="menu-tab" onclick="switchMenu(this,'cat-desserts')">🍮 Desserts</button>
+      <button class="menu-tab" onclick="switchMenu(this,'cat-beverages')">🥤 Beverages</button>
+    </div>
+
+    <div class="menu-categories">
+
+      <!-- Daawat Special -->
+      <div id="cat-special" class="menu-category active">
+        <div class="menu-card">
+          <div class="menu-card-header"><h3>Mojito</h3><span class="badge-veg">🟢 Veg</span></div>
+          <div class="menu-items">
+            <div class="menu-item"><span class="menu-item-name">Daawat Special Mojito</span><span class="menu-item-price">₹270</span></div>
+            <div class="menu-item"><span class="menu-item-name">Daawat Signature Mojito</span><span class="menu-item-price">₹300</span></div>
+          </div>
+        </div>
+        <div class="menu-card">
+          <div class="menu-card-header"><h3>Veg Starter</h3><span class="badge-veg">🟢 Veg</span></div>
+          <div class="menu-items">
+            <div class="menu-item"><span class="menu-item-name">Daawat Special Mushroom</span><span class="menu-item-price">₹350</span></div>
+            <div class="menu-item"><span class="menu-item-name">Daawat Special Kabab</span><span class="menu-item-price">₹350</span></div>
+          </div>
+        </div>
+        <div class="menu-card">
+          <div class="menu-card-header"><h3>Non Veg Starter</h3><span class="badge-nonveg">🔴 Non-Veg</span></div>
+          <div class="menu-items">
+            <div class="menu-item"><span class="menu-item-name">Daawat Special Chicken Kabab</span><span class="menu-item-price">₹400</span></div>
+            <div class="menu-item"><span class="menu-item-name">Daawat Special Fish Tikka</span><span class="menu-item-price">₹450</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Veg Starter -->
+      <div id="cat-vegstarter" class="menu-category">
+        <div class="menu-card">
+          <div class="menu-card-header"><h3>Veg Starter</h3><span class="badge-veg">🟢 Veg</span></div>
+          <div class="menu-items">
+            <div class="menu-item"><span class="menu-item-name">Daawat Special Mushroom</span><span class="menu-item-price">₹350</span></div>
+            <div class="menu-item"><span class="menu-item-name">Daawat Special Kabab</span><span class="menu-item-price">₹350</span></div>
+            <div class="menu-item"><span class="menu-item-name">Malai Soya Chaap</span><span class="menu-item-price">₹240 / ₹400</span></div>
+            <div class="menu-item"><span class="menu-item-name">Achari Soya Chaap</span><span class="menu-item-price">₹260 / ₹420</span></div>
+            <div class="menu-item"><span class="menu-item-name">Tandoori Soya Chaap</span><span class="menu-item-price">₹270 / ₹430</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Non Veg Starter -->
+      <div id="cat-nonvegstarter" class="menu-category">
+        <div class="menu-card">
+          <div class="menu-card-header"><h3>Non Veg Starter</h3><span class="badge-nonveg">🔴 Non-Veg</span></div>
+          <div class="menu-items">
+            <div class="menu-item"><span class="menu-item-name">Daawat Special Chicken Kabab</span><span class="menu-item-price">₹400</span></div>
+            <div class="menu-item"><span class="menu-item-name">Daawat Special Fish Tikka</span><span class="menu-item-price">₹450</span></div>
+            <div class="menu-item"><span class="menu-item-name">Fish Patra</span><span class="menu-item-price">₹390</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Veg Main Course -->
+      <div id="cat-vegmain" class="menu-category">
+        <div class="menu-card">
+          <div class="menu-card-header"><h3>Veg Main Course</h3><span class="badge-veg">🟢 Veg</span></div>
+          <div class="menu-items">
+            <div class="menu-item"><span class="menu-item-name">Dal Bhukara</span><span class="menu-item-price">₹450</span></div>
+            <div class="menu-item"><span class="menu-item-name">Daal Baati Churma</span><span class="menu-item-price">₹380</span></div>
+            <div class="menu-item"><span class="menu-item-name">Thai Green Veg Kadi</span><span class="menu-item-price">₹420</span></div>
+            <div class="menu-item"><span class="menu-item-name">Cottage Cheese in Barbeque Sauce</span><span class="menu-item-price">₹320</span></div>
+            <div class="menu-item"><span class="menu-item-name">Tofu in Italian Sauce</span><span class="menu-item-price">₹320</span></div>
+            <div class="menu-item"><span class="menu-item-name">Veg Stew</span><span class="menu-item-price">₹250</span></div>
+            <div class="menu-item"><span class="menu-item-name">Butter Soya Chaap Masala</span><span class="menu-item-price">₹270 / ₹450</span></div>
+            <div class="menu-item"><span class="menu-item-name">Punjabi Chole</span><span class="menu-item-price">₹100</span></div>
+            <div class="menu-item"><span class="menu-item-name">Veg Sizzlers</span><span class="menu-item-price">₹400</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Non Veg Main Course -->
+      <div id="cat-nonvegmain" class="menu-category">
+        <div class="menu-card">
+          <div class="menu-card-header"><h3>Non Veg Main Course</h3><span class="badge-nonveg">🔴 Non-Veg</span></div>
+          <div class="menu-items">
+            <div class="menu-item"><span class="menu-item-name">Laal Maas</span><span class="menu-item-price">₹580</span></div>
+            <div class="menu-item"><span class="menu-item-name">Thai Red Chicken Curry</span><span class="menu-item-price">₹450</span></div>
+            <div class="menu-item"><span class="menu-item-name">Bhati Da Murg Pindi Vala</span><span class="menu-item-price">₹590 / ₹950</span></div>
+            <div class="menu-item"><span class="menu-item-name">Chicken in Barbeque Sauce</span><span class="menu-item-price">₹360</span></div>
+            <div class="menu-item"><span class="menu-item-name">Chicken Stew</span><span class="menu-item-price">₹350</span></div>
+            <div class="menu-item"><span class="menu-item-name">Non Veg Sizzler</span><span class="menu-item-price">₹450</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Daal & Rice -->
+      <div id="cat-daalrice" class="menu-category">
+        <div class="menu-card">
+          <div class="menu-card-header"><h3>Daal &amp; Rice</h3><span class="badge-veg">🟢 Veg</span></div>
+          <div class="menu-items">
+            <div class="menu-item"><span class="menu-item-name">Dal Fry</span><span class="menu-item-price">APS</span></div>
+            <div class="menu-item"><span class="menu-item-name">Dal Makhani</span><span class="menu-item-price">APS</span></div>
+            <div class="menu-item"><span class="menu-item-name">Steamed Rice</span><span class="menu-item-price">APS</span></div>
+            <div class="menu-item"><span class="menu-item-name">Jeera Rice</span><span class="menu-item-price">APS</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Biryani -->
+      <div id="cat-biryani" class="menu-category">
+        <div class="menu-card">
+          <div class="menu-card-header"><h3>Biryani</h3><span class="badge-veg">🟢 Veg</span></div>
+          <div class="menu-items">
+            <div class="menu-item"><span class="menu-item-name">Veg Biryani</span><span class="menu-item-price">APS</span></div>
+          </div>
+        </div>
+        <div class="menu-card">
+          <div class="menu-card-header"><h3>Biryani</h3><span class="badge-nonveg">🔴 Non-Veg</span></div>
+          <div class="menu-items">
+            <div class="menu-item"><span class="menu-item-name">Chicken Biryani</span><span class="menu-item-price">APS</span></div>
+            <div class="menu-item"><span class="menu-item-name">Mutton Biryani</span><span class="menu-item-price">APS</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Indian Breads -->
+      <div id="cat-breads" class="menu-category">
+        <div class="menu-card">
+          <div class="menu-card-header"><h3>Indian Breads</h3><span class="badge-veg">🟢 Veg</span></div>
+          <div class="menu-items">
+            <div class="menu-item"><span class="menu-item-name">Butter Naan</span><span class="menu-item-price">APS</span></div>
+            <div class="menu-item"><span class="menu-item-name">Garlic Naan</span><span class="menu-item-price">APS</span></div>
+            <div class="menu-item"><span class="menu-item-name">Tandoori Roti</span><span class="menu-item-price">APS</span></div>
+            <div class="menu-item"><span class="menu-item-name">Paratha</span><span class="menu-item-price">APS</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Oriental & Continental -->
+      <div id="cat-oriental" class="menu-category">
+        <div class="menu-card">
+          <div class="menu-card-header"><h3>Oriental &amp; Continental</h3><span class="badge-veg">🟢 Veg</span></div>
+          <div class="menu-items">
+            <div class="menu-item"><span class="menu-item-name">Veg Manchurian</span><span class="menu-item-price">APS</span></div>
+            <div class="menu-item"><span class="menu-item-name">Veg Chowmein</span><span class="menu-item-price">APS</span></div>
+            <div class="menu-item"><span class="menu-item-name">Spring Rolls</span><span class="menu-item-price">APS</span></div>
+          </div>
+        </div>
+        <div class="menu-card">
+          <div class="menu-card-header"><h3>Oriental &amp; Continental</h3><span class="badge-nonveg">🔴 Non-Veg</span></div>
+          <div class="menu-items">
+            <div class="menu-item"><span class="menu-item-name">Chicken Manchurian</span><span class="menu-item-price">APS</span></div>
+            <div class="menu-item"><span class="menu-item-name">Chicken Chowmein</span><span class="menu-item-price">APS</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Rice & Noodles -->
+      <div id="cat-ricenoodles" class="menu-category">
+        <div class="menu-card">
+          <div class="menu-card-header"><h3>Rice &amp; Noodles</h3><span class="badge-veg">🟢 Veg</span></div>
+          <div class="menu-items">
+            <div class="menu-item"><span class="menu-item-name">Veg Fried Rice</span><span class="menu-item-price">APS</span></div>
+            <div class="menu-item"><span class="menu-item-name">Veg Noodles</span><span class="menu-item-price">APS</span></div>
+          </div>
+        </div>
+        <div class="menu-card">
+          <div class="menu-card-header"><h3>Rice &amp; Noodles</h3><span class="badge-nonveg">🔴 Non-Veg</span></div>
+          <div class="menu-items">
+            <div class="menu-item"><span class="menu-item-name">Chicken Fried Rice</span><span class="menu-item-price">APS</span></div>
+            <div class="menu-item"><span class="menu-item-name">Chicken Noodles</span><span class="menu-item-price">APS</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Desserts -->
+      <div id="cat-desserts" class="menu-category">
+        <div class="menu-card">
+          <div class="menu-card-header"><h3>Desserts</h3><span class="badge-veg">🟢 Veg</span></div>
+          <div class="menu-items">
+            <div class="menu-item"><span class="menu-item-name">Gulab Jamun</span><span class="menu-item-price">APS</span></div>
+            <div class="menu-item"><span class="menu-item-name">Phirni</span><span class="menu-item-price">APS</span></div>
+            <div class="menu-item"><span class="menu-item-name">Rasmalai</span><span class="menu-item-price">APS</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Beverages -->
+      <div id="cat-beverages" class="menu-category">
+        <div class="menu-card">
+          <div class="menu-card-header"><h3>Beverages</h3><span class="badge-veg">🟢 Veg</span></div>
+          <div class="menu-items">
+            <div class="menu-item"><span class="menu-item-name">Daawat Special Mojito</span><span class="menu-item-price">₹270</span></div>
+            <div class="menu-item"><span class="menu-item-name">Daawat Signature Mojito</span><span class="menu-item-price">₹300</span></div>
+            <div class="menu-item"><span class="menu-item-name">Lassi</span><span class="menu-item-price">APS</span></div>
+            <div class="menu-item"><span class="menu-item-name">Fresh Juice</span><span class="menu-item-price">APS</span></div>
+            <div class="menu-item"><span class="menu-item-name">Cold Drinks</span><span class="menu-item-price">APS</span></div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /menu-categories -->
+
+    <p class="menu-note">* Prices are indicative. GST additional. APS = As Per Season. Full menu at the restaurant.</p>
+  </div>
+</section>
+
+<!-- ═══ GALLERY ═══ -->
+<section id="gallery">
+  <div class="gallery-inner">
+    <div class="section-header">
+      <p class="section-label-text">A Visual Feast</p>
+      <h2 class="section-h2">Our Gallery</h2>
+      <div class="section-divider"></div>
+      <p style="color:#6b7280;max-width:32rem;margin:0.75rem auto 0;font-size:0.95rem;">Step inside Daawat — warm lights, happy faces, and beautiful food await you.</p>
+    </div>
+
+    <div class="gallery-grid">
+      <div class="gallery-item large">
+        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=900&q=80" alt="Daawat Restaurant — A Warm Welcome Awaits" />
+        <div class="gallery-item-overlay"><p class="gallery-item-label">Daawat Restaurant — A Warm Welcome Awaits</p></div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=600&q=80" alt="Breezy Open-Air Terrace Dining" />
+        <div class="gallery-item-overlay"><p class="gallery-item-label">Breezy Open-Air Terrace Dining</p></div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80" alt="Elegant Indoor Dining Hall" />
+        <div class="gallery-item-overlay"><p class="gallery-item-label">Elegant Indoor Dining Hall</p></div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?w=600&q=80" alt="Our Friendly Team — Always Ready to Serve" />
+        <div class="gallery-item-overlay"><p class="gallery-item-label">Our Friendly Team — Always Ready to Serve</p></div>
+      </div>
+    </div>
+
+    <div class="gallery-stats">
+      <div class="gallery-stat"><div class="gallery-stat-num">25+</div><p class="gallery-stat-label">Tables</p></div>
+      <div class="gallery-stat"><div class="gallery-stat-num">500+</div><p class="gallery-stat-label">Happy Guests / Month</p></div>
+      <div class="gallery-stat"><div class="gallery-stat-num">80+</div><p class="gallery-stat-label">Menu Items</p></div>
+      <div class="gallery-stat"><div class="gallery-stat-num">50+</div><p class="gallery-stat-label">Google Reviews</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ REVIEWS ═══ -->
+<section id="reviews">
+  <div class="reviews-inner">
+    <div class="section-header">
+      <p class="section-label-text">What People Say</p>
+      <h2 class="section-h2">Customer Reviews</h2>
+      <div class="section-divider"></div>
+      <div class="reviews-score-row">
+        <div class="reviews-stars-big">
+          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+        </div>
+        <div>
+          <span class="reviews-score-num">5.0</span>
+          <span class="reviews-score-label"> / 5 on Google</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="reviews-grid">
+
+      <div class="review-card">
+        <div class="review-header">
+          <div class="reviewer-row">
+            <div class="reviewer-avatar">i</div>
+            <div><p class="reviewer-name">itheeverse</p><p class="reviewer-type">Local Guide</p></div>
+          </div>
+          <span class="review-time">2 months ago</span>
+        </div>
+        <div class="review-stars-small"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <p class="review-text">"We ordered a 1.5 kg veg biryani for my baby's birthday and it was absolutely delicious. They customized it exactly as per our request and even sent gravy along so it didn't feel dry at all. The raita was amazing — thick, fresh curd with cucumber and onion, not watery at all. We also got papad, onion, pickle pouches and lemon with it. Really thoughtful service and great taste. Highly recommended!"</p>
+        <div class="review-dish-tag"><span>🍽️ Veg Biryani</span></div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-header">
+          <div class="reviewer-row">
+            <div class="reviewer-avatar">R</div>
+            <div><p class="reviewer-name">Rohit Shridhar</p><p class="reviewer-type">Local Guide</p></div>
+          </div>
+          <span class="review-time">4 months ago</span>
+        </div>
+        <div class="review-stars-small"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <p class="review-text">"Best restaurant in Ulwe! I visited with family and friends, including kids. The staff were amazing — they even played cartoons on TV for the children and offered them chocolates while we waited. The food was delicious; we tried the vegetarian dishes and everything tasted great. The staff were attentive in a very polite and professional way. Overall, a wonderful experience — highly recommended for families! 🌟"</p>
+        <div class="review-dish-tag"><span>🍽️ Family Dining</span></div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-header">
+          <div class="reviewer-row">
+            <div class="reviewer-avatar">A</div>
+            <div><p class="reviewer-name">Akshita Shoanak</p><p class="reviewer-type">Regular Customer</p></div>
+          </div>
+          <span class="review-time">3 months ago</span>
+        </div>
+        <div class="review-stars-small"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <p class="review-text">"I have been ordering a lot lately from this place for my night meals and they have always met my expectations. They give the right kind of North Indian taste I had been longing for in Ulwe. They have always been super accommodating with my requests and proactive even fulfilling my late night requests."</p>
+        <div class="review-dish-tag"><span>🍽️ North Indian Food</span></div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-header">
+          <div class="reviewer-row">
+            <div class="reviewer-avatar">S</div>
+            <div><p class="reviewer-name">Shambhavi Sharma</p><p class="reviewer-type">Verified Customer</p></div>
+          </div>
+          <span class="review-time">3 months ago</span>
+        </div>
+        <div class="review-stars-small"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <p class="review-text">"Great taste, awesome food, I love it! Home delivery service is very fast — in only 30 minutes I got my food at my door, and the best part is the food was delivered hot and fresh. Best restaurant in Ulwe!"</p>
+        <div class="review-dish-tag"><span>🍽️ Home Delivery</span></div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-header">
+          <div class="reviewer-row">
+            <div class="reviewer-avatar">V</div>
+            <div><p class="reviewer-name">Vini K</p><p class="reviewer-type">Local Guide • 120 reviews</p></div>
+          </div>
+          <span class="review-time">3 months ago</span>
+        </div>
+        <div class="review-stars-small"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <p class="review-text">"Excellent food! Especially their fish tikka and biryani was worth the wait. Great service overall. Definitely coming back!"</p>
+        <div class="review-dish-tag"><span>🍽️ Fish Tikka &amp; Biryani</span></div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-header">
+          <div class="reviewer-row">
+            <div class="reviewer-avatar">R</div>
+            <div><p class="reviewer-name">Rj Bhai</p><p class="reviewer-type">Regular Customer</p></div>
+          </div>
+          <span class="review-time">2 months ago</span>
+        </div>
+        <div class="review-stars-small"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <p class="review-text">"I eat veg thali daily from this restaurant since 3 months. The taste is the best and it remains the same as it was from the beginning. Loved it! Highly recommended to others. Must visit."</p>
+        <div class="review-dish-tag"><span>🍽️ Veg Thali</span></div>
+      </div>
+
+    </div>
+
+    <div class="reviews-cta-row">
+      <a href="https://maps.google.com/" target="_blank" class="btn-outline-amber">See All Reviews</a>
+    </div>
+
+    <div class="review-google-banner">
+      <h3>Loved your experience at Daawat?</h3>
+      <p>Share your feedback on Google and help others discover us!</p>
+      <a href="https://maps.google.com/" target="_blank" class="btn-white-sm">★ Write a Google Review</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ BOOKING ═══ -->
+<section id="booking">
+  <div class="booking-inner">
+    <div class="section-header">
+      <p class="section-label-text">Reserve Your Spot</p>
+      <h2 class="section-h2">Book a Table</h2>
+      <div class="section-divider"></div>
+      <p style="color:#6b7280;max-width:32rem;margin:0.75rem auto 0;font-size:0.95rem;">Reserve your table and let us prepare a special experience just for you. Walk-ins also welcome!</p>
+    </div>
+
+    <div class="booking-grid">
+      <!-- Form -->
+      <div>
+        <div class="booking-form">
+          <div class="form-grid">
+            <div class="form-group">
+              <label class="form-label">Full Name *</label>
+              <input id="f-name" class="form-input" type="text" placeholder="e.g. Rahul Sharma" name="name" />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Phone Number *</label>
+              <input id="f-phone" class="form-input" type="tel" placeholder="e.g. 9876543210" name="phone" />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Date *</label>
+              <input id="f-date" class="form-input" type="date" name="date" />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Preferred Time *</label>
+              <select id="f-time" class="form-select" name="time">
+                <option value="">Select a time</option>
+                <option>11:00 AM</option><option>11:30 AM</option>
+                <option>12:00 PM</option><option>12:30 PM</option>
+                <option>01:00 PM</option><option>01:30 PM</option>
+                <option>02:00 PM</option><option>02:30 PM</option>
+                <option>07:00 PM</option><option>07:30 PM</option>
+                <option>08:00 PM</option><option>08:30 PM</option>
+                <option>09:00 PM</option><option>09:30 PM</option>
+                <option>10:00 PM</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Number of Guests *</label>
+              <select id="f-guests" class="form-select" name="guests">
+                <option value="1">1 Guest</option><option value="2">2 Guests</option>
+                <option value="3">3 Guests</option><option value="4">4 Guests</option>
+                <option value="5">5 Guests</option><option value="6">6 Guests</option>
+                <option value="7">7 Guests</option><option value="8">8 Guests</option>
+                <option value="9">9 Guests</option><option value="10+">10+ Guests</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Special Requests</label>
+              <input id="f-notes" class="form-input" type="text" placeholder="Birthday, anniversary, dietary needs..." name="message" />
+            </div>
+          </div>
+          <div class="booking-btns">
+            <button class="btn-book-main" onclick="submitBooking()">Book My Table</button>
+            <a href="https://wa.me/917208109801?text=Hello%20Daawat%20Restaurant!%20I'd%20like%20to%20book%20a%20table." target="_blank" class="btn-book-whatsapp">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"/></svg>
+              Book via WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Info -->
+      <div class="booking-info">
+        <div class="info-cards">
+          <div class="info-card">
+            <div class="info-card-header">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg>
+              <span>Call Us</span>
+            </div>
+            <a href="tel:7208109801">72081 09801</a>
+            <a href="tel:9420136715">94201 36715</a>
+          </div>
+          <div class="info-card">
+            <div class="info-card-header">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              <span>Opening Hours</span>
+            </div>
+            <div class="hours-list">
+              <div class="hours-row"><span>Mon–Fri</span><span>11 AM–3 PM, 7–11 PM</span></div>
+              <div class="hours-row"><span>Sat–Sun</span><span>11 AM – 11 PM</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="address-card">
+          <div class="address-card-title">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Our Address</span>
+          </div>
+          <p>Shop No. 1–6, Divine Royale Building,<br/>Plot No. 158, Sector 23, Ulwe,<br/>Navi Mumbai, Maharashtra 410206</p>
+        </div>
+        <div class="order-card">
+          <div class="order-card-title">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+            <span>Order Online</span>
+          </div>
+          <div class="order-btns">
+            <a href="#" class="btn-order btn-swiggy">Swiggy</a>
+            <a href="#" class="btn-order btn-zomato">Zomato</a>
+            <a href="https://wa.me/917208109801" target="_blank" class="btn-order btn-wa-sm">WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">दावत Restaurant</div>
+        <div class="footer-logo-sub">Multi Cuisine</div>
+        <p class="footer-tagline">"People Who Love To Eat Are Always The Best People!"</p>
+        <p class="footer-desc">Authentic flavours, warm hospitality, and a feast for every occasion — right in the heart of Ulwe.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <div class="footer-links">
+          <a href="#home">→ Home</a>
+          <a href="#about">→ About Us</a>
+          <a href="#menu">→ Our Menu</a>
+          <a href="#gallery">→ Gallery</a>
+          <a href="#reviews">→ Customer Reviews</a>
+          <a href="#booking">→ Book a Table</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Opening Hours</h4>
+        <div class="footer-hours">
+          <div class="footer-hours-row">
+            <span class="footer-hours-day">Monday – Friday</span>
+            <span class="footer-hours-time">11:00 AM – 3:00 PM</span>
+            <span class="footer-hours-time">7:00 PM – 11:00 PM</span>
+          </div>
+          <div class="footer-hours-row">
+            <span class="footer-hours-day">Saturday – Sunday</span>
+            <span class="footer-hours-time">11:00 AM – 11:00 PM</span>
+            <span class="footer-hours-time" style="font-size:0.7rem;color:rgba(255,255,255,0.4)">(Extended weekend hours)</span>
+          </div>
+        </div>
+        <div style="margin-top:1rem;">
+          <p style="font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:0.5rem;">Order Online</p>
+          <div class="footer-contact-order">
+            <a href="#" style="color:#fbbf24;text-decoration:none;font-size:0.8rem;">Swiggy</a>
+            <a href="#" style="color:#fbbf24;text-decoration:none;font-size:0.8rem;">Zomato</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Contact Us</h4>
+        <div class="footer-contact">
+          <a href="tel:7208109801">72081 09801</a>
+          <a href="tel:9420136715">94201 36715</a>
+          <p style="margin-top:0.5rem;color:rgba(255,255,255,0.4);font-size:0.75rem;line-height:1.6;">Shop No. 1–6, Divine Royale Building, Plot No. 158, Sector 23, Ulwe, Navi Mumbai, Maharashtra 410206</p>
+        </div>
+      </div>
+    </div>
+    <hr class="footer-divider" />
+    <div class="footer-bottom">
+      <p>© 2026 Daawat Restaurant. All Rights Reserved. Designed and Managed by GrowWithKrishna</p>
+      <a href="#booking" class="footer-book-btn">Book a Table</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══ TOAST ═══ -->
+<div class="toast" id="toast"></div>
+
+<script>
+  // ── Set today as min date
+  const today = new Date().toISOString().split('T')[0];
+  const dateInput = document.getElementById('f-date');
+  if(dateInput) dateInput.min = today;
+
+  // ── Menu tabs
+  function switchMenu(btn, catId) {
+    document.querySelectorAll('.menu-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.menu-category').forEach(c => c.classList.remove('active'));
+    btn.classList.add('active');
+    const el = document.getElementById(catId);
+    if(el) el.classList.add('active');
+  }
+
+  // ── Mobile menu
+  let menuOpen = false;
+  function toggleMenu() {
+    menuOpen = !menuOpen;
+    const m = document.getElementById('mobileMenu');
+    m.classList.toggle('open', menuOpen);
+    document.getElementById('icon-menu').style.display = menuOpen ? 'none' : 'block';
+    document.getElementById('icon-x').style.display = menuOpen ? 'block' : 'none';
+  }
+  function closeMenu() {
+    menuOpen = false;
+    document.getElementById('mobileMenu').classList.remove('open');
+    document.getElementById('icon-menu').style.display = 'block';
+    document.getElementById('icon-x').style.display = 'none';
+  }
+
+  // ── Nav scroll
+  window.addEventListener('scroll', () => {
+    const h = document.getElementById('header');
+    if(window.scrollY > 50) h.classList.add('scrolled');
+    else h.classList.remove('scrolled');
+  });
+
+  // ── Toast
+  function showToast(msg) {
+    const t = document.getElementById('toast');
+    t.textContent = msg;
+    t.classList.add('show');
+    setTimeout(() => t.classList.remove('show'), 3500);
+  }
+
+  // ── Booking submit → WhatsApp
+  function submitBooking() {
+    const name = document.getElementById('f-name').value.trim();
+    const phone = document.getElementById('f-phone').value.trim();
+    const date = document.getElementById('f-date').value;
+    const time = document.getElementById('f-time').value;
+    const guests = document.getElementById('f-guests').value;
+    const notes = document.getElementById('f-notes').value.trim();
+    if(!name || !phone || !date || !time) {
+      showToast('⚠️ Please fill all required fields.');
+      return;
+    }
+    const msg = encodeURIComponent(
+      `Hello Daawat Restaurant! I'd like to book a table.\n\nName: ${name}\nPhone: ${phone}\nDate: ${date}\nTime: ${time}\nGuests: ${guests}\nSpecial requests: ${notes || 'None'}`
+    );
+    window.open(`https://wa.me/917208109801?text=${msg}`, '_blank');
+    showToast('✅ Redirecting to WhatsApp...');
+  }
+</script>
+</body>
+</html>

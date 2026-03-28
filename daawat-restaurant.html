@@ -1,0 +1,1412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Daawat Restaurant | दावत रेस्टोरेंट | Ulwe, Navi Mumbai</title>
+  <meta name="description" content="Daawat Restaurant — Best multi-cuisine restaurant in Ulwe, Navi Mumbai. Authentic North Indian food, Biryani, Tandoori, home delivery, and dine-in." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600&family=Cinzel:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --burgundy: #6B1A2A;
+      --burgundy-dark: #4A0F1C;
+      --saffron: #D4820A;
+      --saffron-light: #F0A830;
+      --gold: #C9A84C;
+      --gold-light: #E8C97A;
+      --cream: #FAF3E0;
+      --cream-dark: #F0E6C8;
+      --parchment: #EFE0BE;
+      --charcoal: #1C1008;
+      --text-dark: #2A1505;
+      --text-mid: #5A3A1A;
+      --text-light: #8A6A3A;
+      --white: #FFFDF7;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Lato', sans-serif;
+      background: var(--cream);
+      color: var(--text-dark);
+      overflow-x: hidden;
+    }
+
+    /* ─── ORNAMENTAL DIVIDER ─── */
+    .ornament {
+      text-align: center;
+      color: var(--gold);
+      font-size: 1.4rem;
+      letter-spacing: 0.5rem;
+      margin: 1.5rem 0;
+    }
+    .ornament::before, .ornament::after {
+      content: '─────';
+      color: var(--gold-light);
+      font-size: 0.8rem;
+      vertical-align: middle;
+      margin: 0 0.5rem;
+    }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background: rgba(26, 8, 4, 0.96);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(201, 168, 76, 0.3);
+      padding: 0 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 70px;
+      transition: all 0.3s ease;
+    }
+    .nav-logo {
+      font-family: 'Cinzel', serif;
+      font-size: 1.35rem;
+      color: var(--gold-light);
+      text-decoration: none;
+      letter-spacing: 0.12em;
+    }
+    .nav-logo span {
+      color: var(--saffron-light);
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1.1rem;
+    }
+    .nav-links {
+      display: flex;
+      gap: 2.2rem;
+      list-style: none;
+    }
+    .nav-links a {
+      font-family: 'Lato', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(250, 243, 224, 0.75);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--gold-light); }
+    .nav-cta {
+      background: var(--saffron);
+      color: var(--white) !important;
+      padding: 0.45rem 1.2rem;
+      border-radius: 2px;
+    }
+    .nav-cta:hover { background: var(--saffron-light); color: var(--charcoal) !important; }
+
+    /* hamburger */
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: var(--gold-light); transition: all 0.3s; }
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 70px; left: 0; right: 0;
+      background: rgba(26, 8, 4, 0.98);
+      padding: 1.5rem;
+      flex-direction: column;
+      gap: 1.2rem;
+      z-index: 999;
+      border-bottom: 1px solid rgba(201, 168, 76, 0.3);
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      font-family: 'Lato', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(250, 243, 224, 0.8);
+      text-decoration: none;
+    }
+
+    /* ─── HERO ─── */
+    #hero {
+      min-height: 100vh;
+      background:
+        linear-gradient(to bottom, rgba(26, 8, 4, 0.65) 0%, rgba(74, 15, 28, 0.55) 50%, rgba(26, 8, 4, 0.8) 100%),
+        url('https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=1600&q=80') center/cover no-repeat;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 120px 2rem 80px;
+      position: relative;
+      overflow: hidden;
+    }
+    #hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at center, transparent 40%, rgba(26, 8, 4, 0.5) 100%);
+    }
+    .hero-content { position: relative; z-index: 1; }
+    .hero-tag {
+      display: inline-block;
+      font-family: 'Lato', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--saffron-light);
+      border: 1px solid var(--saffron);
+      padding: 0.35rem 1.2rem;
+      margin-bottom: 1.8rem;
+      animation: fadeUp 0.8s ease 0.2s both;
+    }
+    .hero-hindi {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3rem, 8vw, 6rem);
+      font-weight: 300;
+      font-style: italic;
+      color: var(--cream);
+      line-height: 1;
+      animation: fadeUp 0.8s ease 0.4s both;
+    }
+    .hero-title {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(1.6rem, 4vw, 2.8rem);
+      font-weight: 600;
+      color: var(--gold-light);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-top: 0.4rem;
+      animation: fadeUp 0.8s ease 0.6s both;
+    }
+    .hero-divider {
+      width: 120px;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--gold), transparent);
+      margin: 1.5rem auto;
+      animation: fadeUp 0.8s ease 0.7s both;
+    }
+    .hero-sub {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+      color: rgba(250, 243, 224, 0.85);
+      font-style: italic;
+      max-width: 550px;
+      line-height: 1.6;
+      animation: fadeUp 0.8s ease 0.8s both;
+    }
+    .hero-btns {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      margin-top: 2.5rem;
+      flex-wrap: wrap;
+      animation: fadeUp 0.8s ease 1s both;
+    }
+    .btn-primary {
+      background: var(--saffron);
+      color: var(--white);
+      font-family: 'Lato', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      padding: 0.9rem 2.2rem;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.25s;
+      display: inline-block;
+    }
+    .btn-primary:hover { background: var(--saffron-light); color: var(--charcoal); transform: translateY(-2px); }
+    .btn-outline {
+      background: transparent;
+      color: var(--gold-light);
+      font-family: 'Lato', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      padding: 0.9rem 2.2rem;
+      border: 1px solid var(--gold);
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.25s;
+      display: inline-block;
+    }
+    .btn-outline:hover { background: rgba(201, 168, 76, 0.15); transform: translateY(-2px); }
+    .hero-stats {
+      display: flex;
+      gap: 3rem;
+      justify-content: center;
+      margin-top: 4rem;
+      flex-wrap: wrap;
+      animation: fadeUp 0.8s ease 1.2s both;
+    }
+    .hero-stat { text-align: center; }
+    .hero-stat-num {
+      font-family: 'Cinzel', serif;
+      font-size: 2rem;
+      color: var(--gold-light);
+      font-weight: 700;
+    }
+    .hero-stat-label {
+      font-family: 'Lato', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(250, 243, 224, 0.6);
+      margin-top: 0.2rem;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ─── SECTION BASE ─── */
+    section { padding: 6rem 2rem; }
+    .section-label {
+      font-family: 'Lato', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--saffron);
+      text-align: center;
+      margin-bottom: 0.5rem;
+    }
+    .section-title {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 600;
+      color: var(--burgundy-dark);
+      text-align: center;
+      letter-spacing: 0.05em;
+    }
+    .section-title-light {
+      color: var(--gold-light);
+    }
+    .section-sub {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      color: var(--text-mid);
+      font-style: italic;
+      text-align: center;
+      max-width: 600px;
+      margin: 1rem auto 0;
+      line-height: 1.7;
+    }
+
+    /* ─── ABOUT ─── */
+    #about {
+      background: var(--white);
+      position: relative;
+      overflow: hidden;
+    }
+    #about::before {
+      content: '❖';
+      position: absolute;
+      font-size: 18rem;
+      color: rgba(201, 168, 76, 0.05);
+      right: -2rem;
+      top: 50%;
+      transform: translateY(-50%);
+      pointer-events: none;
+    }
+    .about-inner {
+      max-width: 960px;
+      margin: 3rem auto 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+    .about-img-wrap {
+      position: relative;
+    }
+    .about-img {
+      width: 100%;
+      aspect-ratio: 4/5;
+      object-fit: cover;
+      display: block;
+      filter: sepia(10%) saturate(1.1);
+    }
+    .about-img-frame {
+      position: absolute;
+      inset: -12px;
+      border: 1px solid var(--gold);
+      z-index: -1;
+      pointer-events: none;
+    }
+    .about-badge {
+      position: absolute;
+      bottom: -1.5rem;
+      right: -1.5rem;
+      background: var(--burgundy);
+      color: var(--gold-light);
+      font-family: 'Cinzel', serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      padding: 1rem 1.2rem;
+      text-align: center;
+      line-height: 1.5;
+    }
+    .about-badge strong { display: block; font-size: 1.8rem; line-height: 1; }
+    .about-text h2 {
+      font-family: 'Cinzel', serif;
+      font-size: 1.9rem;
+      color: var(--burgundy-dark);
+      margin-bottom: 1.2rem;
+      line-height: 1.3;
+    }
+    .about-text p {
+      font-size: 0.97rem;
+      color: var(--text-mid);
+      line-height: 1.85;
+      margin-bottom: 1rem;
+    }
+    .about-text blockquote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      font-style: italic;
+      color: var(--burgundy);
+      border-left: 3px solid var(--gold);
+      padding-left: 1rem;
+      margin: 1.5rem 0;
+      line-height: 1.65;
+    }
+    .about-icons {
+      display: flex;
+      gap: 1.5rem;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+    }
+    .about-icon-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-mid);
+    }
+    .about-icon-item span { font-size: 1.4rem; }
+
+    /* ─── MENU ─── */
+    #menu { background: var(--cream); }
+    .menu-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.6rem;
+      margin: 2.5rem 0;
+    }
+    .menu-tab {
+      font-family: 'Lato', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.55rem 1.2rem;
+      border: 1px solid var(--gold);
+      background: transparent;
+      color: var(--text-mid);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .menu-tab.active, .menu-tab:hover {
+      background: var(--burgundy);
+      border-color: var(--burgundy);
+      color: var(--gold-light);
+    }
+    .menu-grid {
+      display: none;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1px;
+      max-width: 1100px;
+      margin: 0 auto;
+      background: var(--gold-light);
+      border: 1px solid var(--gold-light);
+    }
+    .menu-grid.active { display: grid; }
+    .menu-item {
+      background: var(--white);
+      padding: 1.4rem 1.6rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1rem;
+      transition: background 0.2s;
+    }
+    .menu-item:hover { background: var(--cream); }
+    .menu-item-info { flex: 1; }
+    .menu-item-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .dot-veg { width: 10px; height: 10px; border-radius: 50%; background: #27ae60; border: 1.5px solid #1e8449; flex-shrink: 0; }
+    .dot-nonveg { width: 10px; height: 10px; border-radius: 50%; background: #e74c3c; border: 1.5px solid #c0392b; flex-shrink: 0; }
+    .menu-item-desc {
+      font-size: 0.78rem;
+      color: var(--text-light);
+      margin-top: 0.25rem;
+      font-style: italic;
+    }
+    .menu-item-price {
+      font-family: 'Cinzel', serif;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--saffron);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .menu-note {
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--text-light);
+      font-style: italic;
+      margin-top: 1.5rem;
+    }
+
+    /* ─── GALLERY ─── */
+    #gallery { background: var(--burgundy-dark); padding: 6rem 0; }
+    #gallery .section-label { color: var(--gold); }
+    #gallery .section-sub { color: rgba(250, 243, 224, 0.7); }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: auto auto;
+      gap: 4px;
+      margin-top: 3rem;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 0 2rem;
+    }
+    .gallery-item {
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+    }
+    .gallery-item:nth-child(1) { grid-column: span 2; grid-row: span 2; }
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      min-height: 200px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease, filter 0.4s ease;
+      filter: brightness(0.88) saturate(1.1);
+    }
+    .gallery-item:hover img { transform: scale(1.06); filter: brightness(1) saturate(1.2); }
+    .gallery-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(74, 15, 28, 0.7) 0%, transparent 60%);
+      opacity: 0;
+      transition: opacity 0.3s;
+      display: flex;
+      align-items: flex-end;
+      padding: 1rem;
+    }
+    .gallery-item:hover .gallery-overlay { opacity: 1; }
+    .gallery-overlay-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      font-style: italic;
+      color: var(--gold-light);
+    }
+
+    /* ─── REVIEWS ─── */
+    #reviews { background: var(--white); }
+    .reviews-stars {
+      text-align: center;
+      font-size: 1.5rem;
+      color: var(--saffron);
+      letter-spacing: 0.2rem;
+      margin-bottom: 0.5rem;
+    }
+    .reviews-score {
+      text-align: center;
+      font-family: 'Cinzel', serif;
+      font-size: 1rem;
+      color: var(--text-mid);
+      margin-bottom: 3rem;
+    }
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .review-card {
+      background: var(--cream);
+      border: 1px solid var(--parchment);
+      border-top: 3px solid var(--gold);
+      padding: 1.8rem;
+      position: relative;
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+    .review-card:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(107, 26, 42, 0.1); }
+    .review-quote {
+      position: absolute;
+      top: 1rem; right: 1.2rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 4rem;
+      color: rgba(201, 168, 76, 0.2);
+      line-height: 1;
+    }
+    .review-stars { color: var(--saffron); font-size: 0.85rem; margin-bottom: 0.8rem; }
+    .review-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.05rem;
+      font-style: italic;
+      color: var(--text-dark);
+      line-height: 1.75;
+      margin-bottom: 1.2rem;
+    }
+    .review-meta { display: flex; align-items: center; gap: 0.8rem; }
+    .review-avatar {
+      width: 38px; height: 38px;
+      border-radius: 50%;
+      background: var(--burgundy);
+      color: var(--gold-light);
+      font-family: 'Cinzel', serif;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .review-name {
+      font-weight: 700;
+      font-size: 0.88rem;
+      color: var(--text-dark);
+    }
+    .review-time {
+      font-size: 0.75rem;
+      color: var(--text-light);
+    }
+    .review-dish {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--saffron);
+      background: rgba(212, 130, 10, 0.1);
+      padding: 0.2rem 0.6rem;
+      margin-top: 0.4rem;
+    }
+
+    /* ─── BOOK A TABLE ─── */
+    #book {
+      background:
+        linear-gradient(135deg, rgba(74, 15, 28, 0.94) 0%, rgba(26, 8, 4, 0.97) 100%),
+        url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200&q=80') center/cover;
+    }
+    #book .section-label { color: var(--gold); }
+    #book .section-sub { color: rgba(250, 243, 224, 0.7); }
+    .book-inner {
+      max-width: 680px;
+      margin: 3rem auto 0;
+      background: rgba(255, 253, 247, 0.04);
+      border: 1px solid rgba(201, 168, 76, 0.25);
+      padding: 3rem;
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem;
+      margin-bottom: 1.2rem;
+    }
+    .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+    .form-group label {
+      font-family: 'Lato', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      background: rgba(255, 253, 247, 0.06);
+      border: 1px solid rgba(201, 168, 76, 0.3);
+      color: var(--cream);
+      font-family: 'Lato', sans-serif;
+      font-size: 0.92rem;
+      padding: 0.75rem 1rem;
+      outline: none;
+      transition: border-color 0.2s;
+      width: 100%;
+    }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder { color: rgba(250, 243, 224, 0.35); }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus { border-color: var(--gold); }
+    .form-group select option { background: var(--charcoal); color: var(--cream); }
+    .form-group textarea { resize: vertical; min-height: 90px; }
+    .form-full { grid-column: span 2; }
+    .form-submit {
+      width: 100%;
+      background: var(--saffron);
+      color: var(--white);
+      font-family: 'Lato', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      padding: 1rem;
+      border: none;
+      cursor: pointer;
+      margin-top: 0.8rem;
+      transition: all 0.25s;
+    }
+    .form-submit:hover { background: var(--saffron-light); color: var(--charcoal); }
+    .book-or {
+      text-align: center;
+      color: rgba(250, 243, 224, 0.4);
+      font-size: 0.8rem;
+      margin: 1.5rem 0 1rem;
+    }
+    .whatsapp-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      width: 100%;
+      background: #25D366;
+      color: #fff;
+      font-family: 'Lato', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 0.85rem;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .whatsapp-btn:hover { background: #20b858; }
+
+    /* ─── CONTACT ─── */
+    #contact { background: var(--cream); }
+    .contact-inner {
+      max-width: 1000px;
+      margin: 3rem auto 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+    .contact-block h3 {
+      font-family: 'Cinzel', serif;
+      font-size: 1.1rem;
+      color: var(--burgundy-dark);
+      margin-bottom: 1.5rem;
+      letter-spacing: 0.1em;
+    }
+    .contact-item {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      align-items: flex-start;
+    }
+    .contact-icon {
+      font-size: 1.4rem;
+      flex-shrink: 0;
+      margin-top: 0.1rem;
+    }
+    .contact-detail strong {
+      display: block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--saffron);
+      margin-bottom: 0.3rem;
+    }
+    .contact-detail p {
+      font-size: 0.95rem;
+      color: var(--text-mid);
+      line-height: 1.6;
+    }
+    .contact-detail a {
+      color: var(--text-mid);
+      text-decoration: none;
+    }
+    .contact-detail a:hover { color: var(--saffron); }
+    .hours-table { width: 100%; border-collapse: collapse; }
+    .hours-table tr { border-bottom: 1px solid var(--parchment); }
+    .hours-table td { padding: 0.6rem 0; font-size: 0.92rem; color: var(--text-mid); }
+    .hours-table td:last-child { text-align: right; color: var(--saffron); font-weight: 700; }
+    .order-platforms {
+      display: flex;
+      gap: 0.8rem;
+      margin-top: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .order-btn {
+      font-family: 'Lato', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.6rem 1.2rem;
+      text-decoration: none;
+      border: 1px solid currentColor;
+      transition: all 0.2s;
+    }
+    .btn-swiggy { color: #fc8019; }
+    .btn-swiggy:hover { background: #fc8019; color: #fff; }
+    .btn-zomato { color: #e23744; }
+    .btn-zomato:hover { background: #e23744; color: #fff; }
+    .btn-whatsapp-sm { color: #25D366; }
+    .btn-whatsapp-sm:hover { background: #25D366; color: #fff; }
+    .map-placeholder {
+      width: 100%;
+      height: 300px;
+      background: var(--parchment);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--gold-light);
+      color: var(--text-mid);
+      font-style: italic;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      text-align: center;
+      overflow: hidden;
+      position: relative;
+    }
+    .map-placeholder iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--charcoal);
+      color: rgba(250, 243, 224, 0.5);
+      text-align: center;
+      padding: 2.5rem 2rem;
+      border-top: 1px solid rgba(201, 168, 76, 0.2);
+    }
+    .footer-logo {
+      font-family: 'Cinzel', serif;
+      font-size: 1.3rem;
+      color: var(--gold-light);
+      letter-spacing: 0.15em;
+      margin-bottom: 0.5rem;
+    }
+    .footer-tagline {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
+    }
+    .footer-links {
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 1.5rem;
+    }
+    .footer-links a {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(250, 243, 224, 0.45);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--gold-light); }
+    .footer-copy { font-size: 0.75rem; }
+
+    /* ─── TOAST ─── */
+    .toast {
+      position: fixed;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%) translateY(6rem);
+      background: var(--burgundy);
+      color: var(--gold-light);
+      font-family: 'Lato', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      padding: 0.9rem 2rem;
+      border: 1px solid var(--gold);
+      z-index: 9999;
+      transition: transform 0.4s cubic-bezier(.34,1.56,.64,1);
+      pointer-events: none;
+    }
+    .toast.show { transform: translateX(-50%) translateY(0); }
+
+    /* ─── SCROLL REVEAL ─── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .about-inner { grid-template-columns: 1fr; }
+      .about-img-wrap { display: none; }
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+      .gallery-item:nth-child(1) { grid-column: span 2; grid-row: span 1; }
+      .form-row { grid-template-columns: 1fr; }
+      .form-full { grid-column: span 1; }
+      .contact-inner { grid-template-columns: 1fr; gap: 2rem; }
+      .book-inner { padding: 2rem 1.5rem; }
+    }
+    @media (max-width: 480px) {
+      section { padding: 4rem 1.2rem; }
+      .gallery-grid { grid-template-columns: 1fr; }
+      .gallery-item:nth-child(1) { grid-column: span 1; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══ NAV ═══ -->
+<nav id="navbar">
+  <a class="nav-logo" href="#hero">DAAWAT <span>दावत</span></a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#menu">Menu</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#book" class="nav-cta">Book a Table</a></li>
+  </ul>
+  <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about" onclick="closeMenu()">About</a>
+  <a href="#menu" onclick="closeMenu()">Menu</a>
+  <a href="#gallery" onclick="closeMenu()">Gallery</a>
+  <a href="#reviews" onclick="closeMenu()">Reviews</a>
+  <a href="#contact" onclick="closeMenu()">Contact</a>
+  <a href="#book" onclick="closeMenu()">Book a Table</a>
+</div>
+
+<!-- ═══ HERO ═══ -->
+<section id="hero">
+  <div class="hero-content">
+    <div class="hero-tag">Multi-Cuisine · Ulwe, Navi Mumbai</div>
+    <div class="hero-hindi">दावत</div>
+    <div class="hero-title">Daawat Restaurant</div>
+    <div class="hero-divider"></div>
+    <p class="hero-sub">Where every meal is a celebration of flavour — authentic tandoori, rich curries &amp; more, served with warmth.</p>
+    <div class="hero-btns">
+      <a href="#book" class="btn-primary">Reserve a Table</a>
+      <a href="#menu" class="btn-outline">Explore Menu</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="hero-stat-num">9+</div><div class="hero-stat-label">Months of Joy</div></div>
+      <div class="hero-stat"><div class="hero-stat-num">500+</div><div class="hero-stat-label">Happy Guests/Month</div></div>
+      <div class="hero-stat"><div class="hero-stat-num">80+</div><div class="hero-stat-label">Menu Items</div></div>
+      <div class="hero-stat"><div class="hero-stat-num">5.0★</div><div class="hero-stat-label">Google Rating</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ABOUT ═══ -->
+<section id="about">
+  <div class="section-label">Our Story</div>
+  <div class="section-title">About Daawat</div>
+  <div class="ornament">❖</div>
+  <div class="about-inner">
+    <div class="about-img-wrap reveal">
+      <img class="about-img" src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&q=80" alt="Daawat Restaurant ambience" />
+      <div class="about-img-frame"></div>
+      <div class="about-badge">
+        <strong>5.0</strong>
+        ★ Google Rating<br/>50+ Reviews
+      </div>
+    </div>
+    <div class="about-text reveal">
+      <h2>A Message from the Owner</h2>
+      <blockquote>"At Daawat, food is more than sustenance — it is an invitation. An invitation to sit together, to share stories, and to savour the rich tapestry of flavours."</blockquote>
+      <p>When we opened Daawat Restaurant in the heart of Ulwe, our dream was simple: to bring the true taste of authentic multi-cuisine cooking to our wonderful community — cooked with fresh ingredients, served with love, and enjoyed in an atmosphere that feels like home.</p>
+      <p>From our signature Biryani and Tandoori Chicken to hearty Dal Makhani, every dish is prepared with recipes perfected over years of passion. Whether you dine in with family, order for a celebration, or grab a quick delivery — we personally ensure every plate leaves our kitchen with the same care and quality.</p>
+      <div class="about-icons">
+        <div class="about-icon-item"><span>🍽️</span> Dine-In</div>
+        <div class="about-icon-item"><span>🛵</span> Home Delivery</div>
+        <div class="about-icon-item"><span>🥡</span> Takeaway</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ MENU ═══ -->
+<section id="menu">
+  <div class="section-label">What We Serve</div>
+  <div class="section-title">Our Menu</div>
+  <div class="ornament">❖</div>
+  <p class="section-sub">From North India's smoky tandoors to Oriental flavours — every dish crafted fresh, every day.</p>
+
+  <div class="menu-tabs">
+    <button class="menu-tab active" onclick="switchTab(this,'tab-special')">⭐ Daawat Specials</button>
+    <button class="menu-tab" onclick="switchTab(this,'tab-veg-starter')">🥗 Veg Starters</button>
+    <button class="menu-tab" onclick="switchTab(this,'tab-nonveg-starter')">🍗 Non-Veg Starters</button>
+    <button class="menu-tab" onclick="switchTab(this,'tab-veg-main')">🍛 Veg Mains</button>
+    <button class="menu-tab" onclick="switchTab(this,'tab-nonveg-main')">🍖 Non-Veg Mains</button>
+    <button class="menu-tab" onclick="switchTab(this,'tab-biryani')">🫕 Biryani</button>
+    <button class="menu-tab" onclick="switchTab(this,'tab-oriental')">🥢 Oriental & Continental</button>
+    <button class="menu-tab" onclick="switchTab(this,'tab-desserts')">🍮 Desserts & Beverages</button>
+  </div>
+
+  <!-- Tab: Specials -->
+  <div id="tab-special" class="menu-grid active">
+    <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name"><span class="dot-veg"></span>Daawat Special Mojito</div><div class="menu-item-desc">Our signature house mojito blend</div></div><div class="menu-item-price">₹270</div></div>
+    <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name"><span class="dot-veg"></span>Daawat Signature Mojito</div><div class="menu-item-desc">Premium signature blend, elevated</div></div><div class="menu-item-price">₹300</div></div>
+    <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name"><span class="dot-veg"></span>Daawat Special Mushroom</div><div class="menu-item-desc">Chef's special mushroom preparation</div></div><div class="menu-item-price">₹350</div></div>
+    <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name"><span class="dot-veg"></span>Daawat Special Kabab</div><div class="menu-item-desc">House specialty veg kabab</div></div><div class="menu-item-price">₹350</div></div>
+    <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name"><span class="dot-nonveg"></span>Daawat Special Chicken Kabab</div><div class="menu-item-desc">Marinated tender chicken, tandoor-grilled</div></div><div class="menu-item-price">₹400</div></div>
+    <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name"><span class="dot-nonveg"></span>Daawat Special Fish Tikka</div><div class="menu-item-desc">Fresh fish, aromatic spice marinade</div></div><div class="menu-item-price">₹450</div></div>
+  </div>
+
+  <!-- Tab: Veg Starters -->
+  <div id="tab-veg-starter" class="menu-grid">
+    <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name"><span class="dot-veg"></span>Daawat Special Mushroom</div><div class="menu-item-desc">Chef's special mushroom preparation</div></div><div class="menu-item-price">₹350</div></div>
+    <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name"><span class="dot-veg"></span>Daawat Special Kabab</div><div class="menu-item-desc">House specialty veg kabab</div></div><div class="menu-item-price">₹350</div></div>
+    <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name"><span class="dot-veg"></span>Malai Soya Chaap</div><div class="menu-item-desc">Creamy malai marinated soya chaap</div></div><div class="menu-item-price">₹240 / ₹400</div></div>
+    <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name"><span class="dot-veg"></span>Achari Soya Chaap</div><div class="menu-item-desc">Tangy pickle-spiced soya chaap</div></div><div class="menu-item-price">₹260 / ₹420</div></div>
+    <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name"><span class="dot-veg"></span>Tandoori Soya Chaap</div><div class="menu-item-desc">Charred over tandoor flames</div></div><div class="menu-item-price">₹270 / ₹430</div></div>
+  </div>
+
+  <!-- Tab: Non-Veg Starters -->
+  <div id="tab-nonveg-starter" class="menu-grid">
+    <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name"><span class="dot-nonveg"></span>Daawat Special Chicken Kabab</div><div class="menu-item-desc">Marinated tender chicken, tandoor-grilled</div></div><div class="menu-item-price">₹400</div></div>
+    <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name"><span class="dot-nonveg"></span>Daawat Special Fish Tikka</div><div class="menu-item-desc">Fresh fish with aromatic spice marinade</div></div><div class="menu-item-price">₹450</div></div>
+    <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name"><span class="dot-nonveg"></span>Fish Patra</div><div class="menu-item-desc">Signature wrapped & spiced fish delicacy</div></div><div class="menu-item-price">₹390</div></div>
+  </div>
+
+  <!-- Tab: Veg Mains -->
+  <div id="tab-veg-main" class="menu-grid">
+    <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name"><span class="dot-veg"></span>Dal Bhukara</div><div class="menu-item-desc">Slow-cooked black dal, smoky &amp; rich</div></div><div class="menu-item-price">₹450</div></div>
+    <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name"><span class="dot-veg"></span>Daal Baati Churma</div><div class="menu-item-desc">Traditional Rajasthani feast combo</div></div><div class="menu-item-price">₹380</div></div>
+    <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name"><span class="dot-veg"></span>Thai Green Veg Kadi</div><div class="menu-item-desc">Creamy coconut Thai green curry</div></div><div class="menu-item-price">₹420</div></div>
+    <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name"><span class="dot-veg"></span>Cottage Cheese in Barbeque Sauce</div><div class="menu-item-desc">Smoky BBQ paneer preparation</div></div><div class="menu-item-price">₹320</div></div>
+    <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name"><span class="dot-veg"></span>Tofu in Italian Sauce</div><div class="menu-item-desc">Silken tofu in rich Italian herb sauce</div></div><div class="menu-item-price">₹320</div></div>
+    <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name"><span class="dot-veg"></span>Veg Stew</div><div class="menu-item-desc">Light, aromatic Kerala-style stew</div></div><div class="menu-item-price">₹250</div></div>
+    <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name"><span class="dot-veg"></span>Butter Soya Chaap Masala</div><div class="menu-item-desc">Rich, buttery soya chaap gravy</div></div><div class="menu-item-price">₹270 / ₹450</div></div>
+    <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name"><span class="dot-veg"></span>Punjabi Chole</div><div class="menu-item-desc">Classic spiced chickpea curry</div></div><div class="menu-item-price">₹100</div></div>
+    <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name"><span class="dot-veg"></span>Veg Sizzlers</div><div class="menu-item-desc">Dramatic sizzling vegetable platter</div></div><div class="menu-item-price">₹400</div></div>
+  </div>
+
+  <!-- Tab: Non-Veg Mains -->
+  <div id="tab-nonveg-main" class="menu-grid">
+    <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name"><span class="dot-nonveg"></span>Laal Maas</div><div class="menu-item-desc">Fiery Rajasthani red mutton curry</div></div><div class="menu-item-price">₹580</div></div>
+    <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name"><span class="dot-nonveg"></span>Thai Red Chicken Curry</div><div class="menu-item-desc">Aromatic Thai red curry with coconut</div></div><div class="menu-item-price">₹450</div></div>
+    <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name"><span class="dot-nonveg"></span>Bhati Da Murg Pindi Vala</div><div class="menu-item-desc">Authentic Pindi-style chicken delicacy</div></div><div class="menu-item-price">₹590 / ₹950</div></div>
+    <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name"><span class="dot-nonveg"></span>Chicken in Barbeque Sauce</div><div class="menu-item-desc">Tender chicken in smoky BBQ glaze</div></div><div class="menu-item-price">₹360</div></div>
+    <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name"><span class="dot-nonveg"></span>Chicken Stew</div><div class="menu-item-desc">Delicate, mildly spiced chicken stew</div></div><div class="menu-item-price">₹350</div></div>
+    <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name"><span class="dot-nonveg"></span>Non-Veg Sizzler</div><div class="menu-item-desc">Sizzling non-veg platter, served dramatic</div></div><div class="menu-item-price">₹450</div></div>
+  </div>
+
+  <!-- Tab: Biryani -->
+  <div id="tab-biryani" class="menu-grid">
+    <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name"><span class="dot-veg"></span>Veg Biryani</div><div class="menu-item-desc">Aromatic basmati with seasonal vegetables</div></div><div class="menu-item-price">As per size</div></div>
+    <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name"><span class="dot-nonveg"></span>Chicken Biryani</div><div class="menu-item-desc">Classic dum-cooked chicken biryani</div></div><div class="menu-item-price">As per size</div></div>
+    <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name"><span class="dot-nonveg"></span>Mutton Biryani</div><div class="menu-item-desc">Slow-cooked tender mutton biryani</div></div><div class="menu-item-price">As per size</div></div>
+    <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name"><span class="dot-veg"></span>Dal &amp; Rice</div><div class="menu-item-desc">Comforting everyday dal with steamed rice</div></div><div class="menu-item-price">Seasonal</div></div>
+  </div>
+
+  <!-- Tab: Oriental -->
+  <div id="tab-oriental" class="menu-grid">
+    <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name"><span class="dot-veg"></span>Veg Noodles</div><div class="menu-item-desc">Wok-tossed with seasonal vegetables</div></div><div class="menu-item-price">APS</div></div>
+    <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name"><span class="dot-nonveg"></span>Chicken Noodles</div><div class="menu-item-desc">Classic chicken tossed noodles</div></div><div class="menu-item-price">APS</div></div>
+    <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name"><span class="dot-veg"></span>Veg Fried Rice</div><div class="menu-item-desc">Wok-fried basmati with veggies</div></div><div class="menu-item-price">APS</div></div>
+    <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name"><span class="dot-nonveg"></span>Chicken Fried Rice</div><div class="menu-item-desc">Indo-Chinese style chicken fried rice</div></div><div class="menu-item-price">APS</div></div>
+    <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name"><span class="dot-veg"></span>Indian Breads</div><div class="menu-item-desc">Naan, Roti, Paratha — freshly baked</div></div><div class="menu-item-price">As per item</div></div>
+  </div>
+
+  <!-- Tab: Desserts & Beverages -->
+  <div id="tab-desserts" class="menu-grid">
+    <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name"><span class="dot-veg"></span>Gulab Jamun</div><div class="menu-item-desc">Soft dumplings in fragrant rose syrup</div></div><div class="menu-item-price">APS</div></div>
+    <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name"><span class="dot-veg"></span>Phirni</div><div class="menu-item-desc">Chilled creamy rice pudding</div></div><div class="menu-item-price">APS</div></div>
+    <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name"><span class="dot-veg"></span>Daawat Special Mojito</div><div class="menu-item-desc">House signature non-alcoholic mojito</div></div><div class="menu-item-price">₹270</div></div>
+    <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name"><span class="dot-veg"></span>Daawat Signature Mojito</div><div class="menu-item-desc">Premium elevated house mojito</div></div><div class="menu-item-price">₹300</div></div>
+    <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name"><span class="dot-veg"></span>Seasonal Beverages</div><div class="menu-item-desc">Lassi, shakes, coolers &amp; more</div></div><div class="menu-item-price">APS</div></div>
+  </div>
+
+  <p class="menu-note">* Prices are indicative. GST additional. APS = As Per Season. Full menu available at the restaurant.</p>
+</section>
+
+<!-- ═══ GALLERY ═══ -->
+<section id="gallery">
+  <div class="section-label">A Visual Feast</div>
+  <div class="section-title section-title-light">Our Gallery</div>
+  <div class="ornament" style="color: rgba(201,168,76,0.5)">❖</div>
+  <p class="section-sub">Step inside Daawat — warm lights, happy faces, and beautiful food await you.</p>
+  <div class="gallery-grid">
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=900&q=80" alt="Restaurant ambience" />
+      <div class="gallery-overlay"><span class="gallery-overlay-text">A Warm Welcome Awaits</span></div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=600&q=80" alt="Indian food spread" />
+      <div class="gallery-overlay"><span class="gallery-overlay-text">Authentic Flavours</span></div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?w=600&q=80" alt="Biryani" />
+      <div class="gallery-overlay"><span class="gallery-overlay-text">Signature Biryani</span></div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?w=600&q=80" alt="Tandoori dishes" />
+      <div class="gallery-overlay"><span class="gallery-overlay-text">Sizzling Tandoori</span></div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80" alt="Fine dining" />
+      <div class="gallery-overlay"><span class="gallery-overlay-text">Elegant Indoor Dining</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ REVIEWS ═══ -->
+<section id="reviews">
+  <div class="section-label">What People Say</div>
+  <div class="section-title">Customer Reviews</div>
+  <div class="ornament">❖</div>
+  <div class="reviews-stars">★★★★★</div>
+  <div class="reviews-score">5.0 / 5 on Google &nbsp;·&nbsp; 50+ Reviews</div>
+  <div class="reviews-grid">
+    <div class="review-card reveal">
+      <div class="review-quote">"</div>
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">We ordered a 1.5 kg veg biryani for my baby's birthday and it was absolutely delicious. They customized it exactly as per our request and even sent gravy along. The raita was amazing — thick, fresh curd with cucumber and onion. Really thoughtful service!</p>
+      <div class="review-meta">
+        <div class="review-avatar">I</div>
+        <div>
+          <div class="review-name">itheeverse · Local Guide</div>
+          <div class="review-time">2 months ago</div>
+          <div class="review-dish">🍽️ Veg Biryani</div>
+        </div>
+      </div>
+    </div>
+    <div class="review-card reveal">
+      <div class="review-quote">"</div>
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">Best restaurant in Ulwe! The staff were amazing — they even played cartoons on TV for the children and offered them chocolates while we waited. The food was delicious; everything tasted great. A wonderful experience for families!</p>
+      <div class="review-meta">
+        <div class="review-avatar">R</div>
+        <div>
+          <div class="review-name">Rohit Shridhar · Local Guide</div>
+          <div class="review-time">4 months ago</div>
+          <div class="review-dish">🍽️ Family Dining</div>
+        </div>
+      </div>
+    </div>
+    <div class="review-card reveal">
+      <div class="review-quote">"</div>
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">I have been ordering a lot lately from this place for my night meals and they have always met my expectations. They give the right kind of North Indian taste I had been longing for in Ulwe. Always super accommodating with my requests!</p>
+      <div class="review-meta">
+        <div class="review-avatar">A</div>
+        <div>
+          <div class="review-name">Akshita Shoanak</div>
+          <div class="review-time">3 months ago</div>
+          <div class="review-dish">🍽️ North Indian Food</div>
+        </div>
+      </div>
+    </div>
+    <div class="review-card reveal">
+      <div class="review-quote">"</div>
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">Great taste, awesome food, I love it! Home delivery service is very fast — in only 30 minutes I got my food at my door, and the best part is the food was delivered hot and fresh. Best restaurant in Ulwe!</p>
+      <div class="review-meta">
+        <div class="review-avatar">S</div>
+        <div>
+          <div class="review-name">Shambhavi Sharma</div>
+          <div class="review-time">3 months ago</div>
+          <div class="review-dish">🍽️ Home Delivery</div>
+        </div>
+      </div>
+    </div>
+    <div class="review-card reveal">
+      <div class="review-quote">"</div>
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">Excellent food! Especially their fish tikka and biryani was worth the wait. Great service overall. Definitely coming back!</p>
+      <div class="review-meta">
+        <div class="review-avatar">V</div>
+        <div>
+          <div class="review-name">Vini K · Local Guide · 120 reviews</div>
+          <div class="review-time">3 months ago</div>
+          <div class="review-dish">🍽️ Fish Tikka &amp; Biryani</div>
+        </div>
+      </div>
+    </div>
+    <div class="review-card reveal">
+      <div class="review-quote">"</div>
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">I eat veg thali daily from this restaurant since 3 months. The taste is the best and it remains the same as it was from the beginning. Loved it! Highly recommended to others. Must visit.</p>
+      <div class="review-meta">
+        <div class="review-avatar">R</div>
+        <div>
+          <div class="review-name">Rj Bhai · Regular Customer</div>
+          <div class="review-time">2 months ago</div>
+          <div class="review-dish">🍽️ Veg Thali</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ BOOK A TABLE ═══ -->
+<section id="book">
+  <div class="section-label">Reserve Your Spot</div>
+  <div class="section-title section-title-light">Book a Table</div>
+  <div class="ornament" style="color: rgba(201,168,76,0.4)">❖</div>
+  <p class="section-sub">Reserve your table and let us prepare a special experience just for you. Walk-ins also welcome!</p>
+  <div class="book-inner reveal">
+    <div class="form-row">
+      <div class="form-group">
+        <label>Full Name *</label>
+        <input type="text" placeholder="Your name" id="f-name" />
+      </div>
+      <div class="form-group">
+        <label>Phone Number *</label>
+        <input type="tel" placeholder="+91 XXXXX XXXXX" id="f-phone" />
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label>Date *</label>
+        <input type="date" id="f-date" />
+      </div>
+      <div class="form-group">
+        <label>Preferred Time *</label>
+        <select id="f-time">
+          <option value="">Select a time</option>
+          <option>11:00 AM</option><option>11:30 AM</option>
+          <option>12:00 PM</option><option>12:30 PM</option>
+          <option>01:00 PM</option><option>01:30 PM</option>
+          <option>02:00 PM</option><option>02:30 PM</option>
+          <option>07:00 PM</option><option>07:30 PM</option>
+          <option>08:00 PM</option><option>08:30 PM</option>
+          <option>09:00 PM</option><option>09:30 PM</option>
+          <option>10:00 PM</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label>Number of Guests *</label>
+        <select id="f-guests">
+          <option value="">Select guests</option>
+          <option>1 Guest</option><option>2 Guests</option><option>3 Guests</option>
+          <option>4 Guests</option><option>5 Guests</option><option>6 Guests</option>
+          <option>7 Guests</option><option>8 Guests</option><option>9 Guests</option>
+          <option>10+ Guests</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Occasion</label>
+        <select id="f-occasion">
+          <option value="">Select (optional)</option>
+          <option>Birthday</option><option>Anniversary</option><option>Family Gathering</option>
+          <option>Business Lunch</option><option>Date Night</option><option>Other</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group form-full">
+        <label>Special Requests</label>
+        <textarea placeholder="Any dietary preferences, seating requests, or special arrangements..." id="f-notes"></textarea>
+      </div>
+    </div>
+    <button class="form-submit" onclick="submitBooking()">✦ Confirm My Reservation</button>
+    <div class="book-or">— or book instantly via —</div>
+    <a href="https://wa.me/917208109801" class="whatsapp-btn" target="_blank">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Book via WhatsApp
+    </a>
+  </div>
+</section>
+
+<!-- ═══ CONTACT ═══ -->
+<section id="contact">
+  <div class="section-label">Find Us</div>
+  <div class="section-title">Contact &amp; Location</div>
+  <div class="ornament">❖</div>
+  <div class="contact-inner">
+    <div class="contact-block reveal">
+      <h3>Get in Touch</h3>
+      <div class="contact-item">
+        <div class="contact-icon">📞</div>
+        <div class="contact-detail">
+          <strong>Phone</strong>
+          <p><a href="tel:+917208109801">72081 09801</a><br/><a href="tel:+919420136715">94201 36715</a></p>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">📍</div>
+        <div class="contact-detail">
+          <strong>Address</strong>
+          <p>Shop No. 1–6, Divine Royale Building,<br/>Plot No. 158, Sector 23, Ulwe,<br/>Navi Mumbai, Maharashtra 410206</p>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">🕐</div>
+        <div class="contact-detail">
+          <strong>Opening Hours</strong>
+          <table class="hours-table">
+            <tr><td>Monday – Friday</td><td>11 AM–3 PM &amp; 7–11 PM</td></tr>
+            <tr><td>Saturday – Sunday</td><td>11 AM – 11 PM</td></tr>
+          </table>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">🛵</div>
+        <div class="contact-detail">
+          <strong>Order Online</strong>
+          <div class="order-platforms">
+            <a href="#" class="order-btn btn-swiggy">Swiggy</a>
+            <a href="#" class="order-btn btn-zomato">Zomato</a>
+            <a href="https://wa.me/917208109801" class="order-btn btn-whatsapp-sm" target="_blank">WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="map-placeholder">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3773.024580894085!2d73.01500!3d18.99800!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTjCsDU5JzUzLjAiTiA3M8KwMDAnNTguMCJF!5e0!3m2!1sen!2sin!4v1680000000000"
+          allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          title="Daawat Restaurant Location">
+        </iframe>
+      </div>
+      <p style="font-size:0.75rem;color:var(--text-light);margin-top:0.6rem;font-style:italic;">
+        Sector 23, Ulwe, Navi Mumbai — near Divine Royale Building
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div class="footer-logo">DAAWAT RESTAURANT</div>
+  <p class="footer-tagline">"People Who Love to Eat Are Always the Best People"</p>
+  <div class="footer-links">
+    <a href="#hero">Home</a>
+    <a href="#about">About</a>
+    <a href="#menu">Menu</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#book">Book a Table</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <p class="footer-copy">© 2026 Daawat Restaurant, Ulwe, Navi Mumbai. All Rights Reserved.</p>
+</footer>
+
+<!-- ═══ TOAST ═══ -->
+<div class="toast" id="toast"></div>
+
+<script>
+  // ── Set min date for booking
+  const dateInput = document.getElementById('f-date');
+  if (dateInput) {
+    const today = new Date().toISOString().split('T')[0];
+    dateInput.min = today;
+  }
+
+  // ── Menu tabs
+  function switchTab(btn, tabId) {
+    document.querySelectorAll('.menu-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.menu-grid').forEach(g => g.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(tabId).classList.add('active');
+  }
+
+  // ── Mobile menu
+  function toggleMenu() {
+    document.getElementById('mobileMenu').classList.toggle('open');
+  }
+  function closeMenu() {
+    document.getElementById('mobileMenu').classList.remove('open');
+  }
+
+  // ── Toast
+  function showToast(msg) {
+    const t = document.getElementById('toast');
+    t.textContent = msg;
+    t.classList.add('show');
+    setTimeout(() => t.classList.remove('show'), 3500);
+  }
+
+  // ── Booking submission
+  function submitBooking() {
+    const name = document.getElementById('f-name').value.trim();
+    const phone = document.getElementById('f-phone').value.trim();
+    const date = document.getElementById('f-date').value;
+    const time = document.getElementById('f-time').value;
+    const guests = document.getElementById('f-guests').value;
+    if (!name || !phone || !date || !time || !guests) {
+      showToast('⚠️ Please fill all required fields.');
+      return;
+    }
+    const msg = encodeURIComponent(
+      `🍽️ *Table Reservation — Daawat Restaurant*\n\n` +
+      `*Name:* ${name}\n*Phone:* ${phone}\n*Date:* ${date}\n*Time:* ${time}\n*Guests:* ${guests}\n` +
+      `*Notes:* ${document.getElementById('f-notes').value || 'None'}`
+    );
+    window.open(`https://wa.me/917208109801?text=${msg}`, '_blank');
+    showToast('✦ Redirecting to WhatsApp to confirm your booking!');
+  }
+
+  // ── Scroll reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        e.target.style.transitionDelay = `${i * 0.08}s`;
+        e.target.classList.add('visible');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  revealEls.forEach(el => io.observe(el));
+
+  // ── Nav shadow on scroll
+  window.addEventListener('scroll', () => {
+    const nav = document.getElementById('navbar');
+    if (window.scrollY > 60) {
+      nav.style.boxShadow = '0 4px 24px rgba(0,0,0,0.4)';
+    } else {
+      nav.style.boxShadow = 'none';
+    }
+  });
+</script>
+</body>
+</html>
